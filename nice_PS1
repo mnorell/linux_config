@@ -1,0 +1,113 @@
+# Add to the end of ~/.bashrc
+
+
+
+# Colored...
+# ┌─[ :( | 23:24:27 | markus@zen | ~ ]
+# └───▶ 
+
+line_color='\[\e[1;31m\]'
+separator=" $line_color| "
+
+# Start... newline and ┌─[
+PS1="\n$line_color┌─[ "
+
+# Status / return code. As smilies.
+PS1+='$(if [[ $? == 0 ]]; then echo "\[\e[1;32m\]:)"; else echo "\[\e[1;31m\]:("; fi)'
+# or as v or x
+#PS1+='$(if [[ $? == 0 ]]; then echo "\e[1;42m ✔"; else echo "\e[1;41m ✘ $?"; fi)'
+PS1+=$separator
+
+# Time
+PS1+='\[\033[0;33m\]\t'
+PS1+=$separator
+
+# User and hostname
+PS1+='\[\033[0;35m\]\u@\h'
+PS1+=$separator
+
+# Current dir
+PS1+='\[\033[1;34m\]\w'
+
+# End arrow + base color.
+PS1+=$line_color
+PS1+=' ]\n└───▶\[\e[0m\] '
+
+unset separator
+unset line_color
+
+
+
+
+
+
+# Colorful... fg bg
+#┌─ :)  22:15:50  markus@zen  ~/Downloads 
+#└──▶ 
+
+
+#line_color='$(if [[ $? == 0 ]]; then echo "\e[1;31m"; else echo "\e[1;31m"; fi)'
+line_color='\e[1;38;5;244m'
+
+# Start... newline and ┌─[
+PS1="\n$line_color┌─"
+
+# Status / return code. As smilies or x v.
+#PS1+='$(if [[ $? == 0 ]]; then echo "\e[42;97m ✔ "; else echo "\e[41m\e[97m ✘ $? \e[49m"; fi)'
+PS1+='$(if [[ $? == 0 ]]; then echo "\e[42;97m :) "; else echo "\e[41m\e[97m :( "; fi)'
+
+# Time
+PS1+='\e[1;47;38;5;244m \t '
+
+# User and hostname
+PS1+='\e[48;5;219;38;5;199m \u@\h '
+
+# Current dir
+PS1+='\e[48;5;4;38;5;214m \w '
+
+# End arrow + base color.
+PS1+=$line_color
+PS1+='\e[49m\n└──▶\[\e[0m\] '
+
+unset line_color
+
+
+
+
+
+
+# Colorful... fg bg
+#┌─ ✔  2019-10-03 22:26:07 
+#├─ markus@zen  ~/Downloads 
+#└─▶ 
+
+
+#line_color='$(if [[ $? == 0 ]]; then echo "\e[1;31m"; else echo "\e[1;31m"; fi)'
+line_color='\e[1;38;5;244m'
+
+# Start... newline and ┌─[
+PS1="\n$line_color┌─"
+
+# Status / return code. As smilies.
+PS1+='$(if [[ $? == 0 ]]; then echo "\e[42;97m ✔ "; else echo "\e[41m\e[97m ✘ $? \e[49m"; fi)'
+
+# Time
+PS1+='\e[1;47;38;5;244m \D{%Y-%m-%d} \t '
+
+# Second row
+PS1+="\e[49m\n$line_color├─"
+
+# User and hostname
+PS1+='\e[48;5;219;38;5;199m \u@\h '
+
+# Current dir
+PS1+='\e[48;5;4;38;5;214m \w '
+
+# End arrow + base color.
+PS1+=$line_color
+#PS1+='\e[49m\n└─────▶\e[0m '
+PS1+='\e[0m'
+PS1+='\n└─▶ '
+
+unset line_color
+
