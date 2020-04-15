@@ -51,9 +51,9 @@ US-keyboard layout with number row accessible by pressing shift and symbols acti
 Added swe-keys on right alt, as a bonus...
 
 
-`sudo gedit  /usr/share/X11/xkb/symbols/us'
+`sudo gedit  /usr/share/X11/xkb/symbols/us`
 
-Add this to the end on the file:
+### Add this to the end on the file
 
 ```
 partial alphanumeric_keys
