@@ -1,11 +1,7 @@
 # My custom keyboard layouts
 
-- us-keyboard layout with swe-keys added (åäö) added to the regular places.
-- us-keyboard layout with number row accessible by pressing shift, and symbols active by default (for programming).
-
-
 ## US / SE
-us-keyboard layout with swe-keys added (åäö) added to the regular places.
+US-keyboard layout with swe-keys added (åäö) added to the regular places.
 
 _On Ubuntu 19.10 (and later?) there ia now a us-variant added by default. That uses right alt for åäö. I want it as default, with original keys accessible by pressing right-alt._
 
