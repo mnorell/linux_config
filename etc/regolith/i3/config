@@ -111,7 +111,8 @@ bindsym $mod+t layout toggle tabbed splith splitv
 bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 
 # toggle keybord layout with mod+backtick
-bindsym $mod+grave exec --no-startup-id setxkbmap -query | grep -e "layout:\s*se" >/dev/null && /usr/bin/setxkbmap -layout us || /usr/bin/setxkbmap -layout se -variant us
+#bindsym $mod+grave exec --no-startup-id setxkbmap -query | grep -e "layout:\s*se" >/dev/null && /usr/bin/setxkbmap -layout us || /usr/bin/setxkbmap -layout se -variant us
+bindsym $mod+grave exec --no-startup-id setxkbmap -query | grep -e "layout:\s*se" >/dev/null && /usr/bin/setxkbmap -layout us -variant shift-for-numbers || /usr/bin/setxkbmap -layout se -variant us
 
 
 # move to workspace
