@@ -7,7 +7,7 @@
 ## US / SE
 us-keyboard layout with swe-keys added (åäö) added to the regular places.
 
-__On Ubuntu 19.10 (and later?) there ia now a us-variant added by default. That uses right alt for åäö. I want it as default, with original keys accessible by pressing right-alt.__
+_On Ubuntu 19.10 (and later?) there ia now a us-variant added by default. That uses right alt for åäö. I want it as default, with original keys accessible by pressing right-alt._
 
 
 `sudo gedit /usr/share/X11/xkb/symbols/se`
