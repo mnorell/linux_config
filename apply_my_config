@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# TODO 
+# install highlighting sudo apt-get install highlight 
+# make it work with ranger preview, and solarized.
+# install gnome-term and make it not show border, config it via this script.
+
 # Regolith
 sudo cp /etc/regolith/i3/config /etc/regolith/i3/config.bak
 sudo cp etc/regolith/i3/config /etc/regolith/i3/config
