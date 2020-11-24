@@ -1,14 +1,22 @@
 #! /bin/sh
 
+# TODOs
+# - unclutter?
+# - mouse button fix.
+# - network manager?
+# - rotification (notification deamon?)
+# - border color, not working
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 #bspc monitor -d 1 2 3 4 5 6 7 8 9 10
-bspc monitor -d "1. $(cat .config/bspwm/spaces/1)" "2. $(cat spaces/2)" 3 4 5 6 7 8 9 10
 .config/bspwm/refresh_spaces.sh
 
 bspc config border_width         4
 bspc config window_gap          12
 bspc config active_border_color "#ff6600" # funkar ej...
+bspc config single_monocle true
+bspc config gapless_monocle true
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
