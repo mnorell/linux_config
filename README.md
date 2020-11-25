@@ -19,6 +19,7 @@ The will be some errors. Things change, I update the scripts to reflect my local
 
 ## TODOs
 - notification deamon, dunst?
+- hotkeys for backlight, volume, etc.
 - clipboard manager, https://github.com/cdown/clipmenu ?
 - nice background, steal ubuntu defaults?
 - nice theme...
@@ -34,3 +35,6 @@ The will be some errors. Things change, I update the scripts to reflect my local
   - gnome-control-center --class=floating_window
   - bigger/smaller gaps.
   - keyboard layout switch
+- Fix configs for gedit, terminal, thunar?
+- Add cool ranger plugins.
+
