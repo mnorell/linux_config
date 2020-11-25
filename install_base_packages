@@ -13,7 +13,7 @@ sudo apt -y install regolith-desktop-complete
 #image viewer
 #screenshot
 #startup disk creator
-sudo apt -y install polybar highlight ranger gnome-terminal thunar gedit gnome-tweaks gnome-calculator tree gnome-system-monitor powertop
+sudo apt -y install polybar suckless-tools highlight ranger gnome-terminal thunar gedit gnome-tweaks gnome-calculator tree gnome-system-monitor powertop
 
 # Chrome browser
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb

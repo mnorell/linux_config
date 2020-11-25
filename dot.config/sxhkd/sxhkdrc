@@ -1,15 +1,3 @@
-# TODOs
-# - fullscreen and floating toggle.
-# - move workspare to other screen.
-# - logout menu. perhaps. /usr/bin/gnome-session-quit --logout
-# - lock screen?
-# - ranger
-# - gnome-control-center --class=floating_window
-# - notification viewer?
-# - bigger/smaller gaps.
-# - toggle polybar?
-# - keyboard layout switch
-
 #
 # wm independent hotkeys
 #
