@@ -1,16 +1,13 @@
 #! /bin/sh
 
 # TODOs
-# - unclutter?
-# - mouse button fix.
-# - network manager?
-# - rotification (notification deamon?)
+# - dunst notification deamon, collides with regoliths rofication.
 # - border color, not working
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 #bspc monitor -d 1 2 3 4 5 6 7 8 9 10
-.config/bspwm/refresh_spaces.sh
+~/.config/bspwm/refresh_spaces.sh
 
 bspc config border_width         4
 bspc config window_gap          12
@@ -22,6 +19,9 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc config pointer_action1 resize_corner
+bspc config pointer_action2 move
+
 #bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'
 #bspc rule -a mplayer2 state=floating
@@ -29,4 +29,6 @@ bspc config gapless_monocle      true
 #bspc rule -a Screenkey manage=off
 
 polybar Virtual1 &
-
+~/bin/fixmousebuttons.sh
+/usr/bin/unclutter -b
+/usr/bin/nm-applet &
