@@ -16,8 +16,8 @@ The will be some errors. Things change, I update the scripts to reflect my local
 > Perform manual steps...
 ```
 
-
 ## TODOs
+- Add the manual steps to this readme. (Currently echoed in the scripts)
 - notification deamon, dunst?
 - hotkeys for backlight, volume, etc.
 - clipboard manager, https://github.com/cdown/clipmenu ?
