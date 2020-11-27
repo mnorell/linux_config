@@ -32,3 +32,6 @@ polybar Virtual1 &
 ~/bin/fixmousebuttons.sh
 /usr/bin/unclutter -b
 /usr/bin/nm-applet &
+
+# bgcolor
+xsetroot -solid "#888888"

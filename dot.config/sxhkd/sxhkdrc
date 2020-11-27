@@ -126,6 +126,11 @@ super + alt + {Left,Down,Up,Right}
 #super + {Left,Down,Up,Right}
 #	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# change window gaps
+super + minus
+        bspc config window_gap $(( $(bspc config window_gap) - 10 ))
+super + equal
+        bspc config window_gap $(( $(bspc config window_gap) + 10 ))
 
 #
 # Apps

@@ -19,22 +19,17 @@ The will be some errors. Things change, I update the scripts to reflect my local
 ## TODOs
 - Add the manual steps to this readme. (Currently echoed in the scripts)
 - notification deamon, dunst?
-- hotkeys for backlight, volume, etc.
 - clipboard manager, https://github.com/cdown/clipmenu ?
-- nice background, steal ubuntu defaults?
 - nice theme...
-- shadows, compton?
 - polybar, cleanup...
-- other stuff...
 - sxhkd
+  - backlight, volume, etc.
   - fullscreen and floating toggles.
-  - move workspare to other screen.
+  - move workspace to other screen.
   - logout menu. perhaps. /usr/bin/gnome-session-quit --logout
-  - lock screen?
   - ranger
   - gnome-control-center --class=floating_window
-  - bigger/smaller gaps.
   - keyboard layout switch
 - Fix configs for gedit, terminal, thunar?
 - Add cool ranger plugins.
-
+- lock screen on lid close.
