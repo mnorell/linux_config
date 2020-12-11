@@ -24,7 +24,7 @@ cp -r dot.config/* ~/.config/
 #cp -r dot.config/terminator ~/.config/
 
 # Nano
-cp dot.nanorc ~/.nanorc
+#cp dot.nanorc ~/.nanorc
 
 # Mouse and keyboard.
 mkdir ~/bin
