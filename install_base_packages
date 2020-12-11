@@ -1,11 +1,13 @@
 #!/bin/bash
 
 sudo apt update
-sudp apt -y upgrade
+sudo apt -y upgrade
 
 # Regolith
 sudo add-apt-repository -y ppa:regolith-linux/release
 sudo apt -y install regolith-desktop-complete
+
+sudo apt -y install bspwm
 
 # Standard packages
 # Terminator? mousepad? sudo snap install gotop?
