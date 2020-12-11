@@ -16,6 +16,10 @@
 # Add .config
 cp -r dot.config/* ~/.config/
 
+# Fix intel graphics issues.
+sudo mkdir -p /etc/X11/xorg.conf.d/
+sudo cp etc/X11/xorg.conf.d/20-intel.conf /etc/X11/xorg.conf.d/
+
 # Polybar
 #cp -r dot.config/polybar ~/.config/
 
