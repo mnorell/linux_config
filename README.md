@@ -17,7 +17,10 @@ The will be some errors. Things change, I update the scripts to reflect my local
 ```
 
 ## TODOs
+- Restructure apply config script, make it more like a deploy script.
+- Use fish.
 - Add the manual steps to this readme. (Currently echoed in the scripts)
+
 - notification deamon, dunst?
 - clipboard manager, https://github.com/cdown/clipmenu ?
 - nice theme...
@@ -26,7 +29,7 @@ The will be some errors. Things change, I update the scripts to reflect my local
   - backlight, volume, etc.
   - fullscreen and floating toggles.
   - move workspace to other screen.
-  - logout menu. perhaps. /usr/bin/gnome-session-quit --logout
+  - logout menu. perhaps just bspc quit
   - ranger
   - gnome-control-center --class=floating_window
   - keyboard layout switch
