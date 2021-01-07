@@ -14,6 +14,7 @@ super + space
 super + Escape
 	pkill -USR1 -x sxhkd
 
+
 #
 # bspwm hotkeys
 #
@@ -42,6 +43,7 @@ super + m
 super + n
 	rofi -dmenu -p "New name for workspace $(bspc query -D -d focused --names | cut -d "." -f 1)" -input ~/.config/bspwm/spaces/hotlist -theme /etc/regolith/styles/ayu/rofi.rasi > ~/.config/bspwm/spaces/$(bspc query -D -d focused --names | cut -d "." -f 1) && ~/.config/bspwm/./refresh_spaces.sh
 
+
 #
 # state/flags
 #
@@ -53,6 +55,7 @@ super + {t,shift + t,shift + f,f}
 # set the node flags
 #super + ctrl + {m,x,y,z}
 #	bspc node -g {marked,locked,sticky,private}
+
 
 #
 # focus/swap
@@ -90,6 +93,7 @@ super + Tab
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+
 #
 # preselect
 #
@@ -109,6 +113,7 @@ super + ctrl + space
 # cancel the preselection for the focused desktop
 #super + ctrl + shift + space
 #	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
 
 #
 # move/resize
@@ -131,6 +136,35 @@ super + minus
         bspc config window_gap $(( $(bspc config window_gap) - 10 ))
 super + equal
         bspc config window_gap $(( $(bspc config window_gap) + 10 ))
+
+
+#
+# Media keys
+#
+XF86AudioMute
+    amixer -D pulse sset Master toggle
+XF86AudioLowerVolume
+    amixer -D pulse sset Master 10%-
+XF86AudioRaiseVolume
+    amixer -D pulse sset Master 10%+
+shift + XF86AudioLowerVolume
+    amixer -D pulse sset Master 1%-
+shift + XF86AudioRaiseVolume
+    amixer -D pulse sset Master 1%+
+#XF86AudioPlay
+XF86MonBrightnessUp
+    xbacklight -inc 10
+XF86MonBrightnessDown
+    xbacklight -dec 10
+shift + XF86MonBrightnessUp
+    xbacklight -inc 1
+shift + XF86MonBrightnessDown
+    xbacklight -dec 1 -time 0
+#Super_L + p (the screen switch button does this.)
+
+
+
+
 
 #
 # Apps
