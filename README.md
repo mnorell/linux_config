@@ -7,7 +7,7 @@ Currently work in progress, I'm transfering to bspwm from regolith/i3.
 
 
 ## run.
-The will be some errors. Things change, I update the scripts to reflect my local changes and test them when i perform my next install...
+There will be some errors. Things change, I update the scripts to reflect my local changes and test them when I perform my next install...
 ```
 > Install Xubtunu 20.10
 > ./install_base_packages
@@ -18,16 +18,15 @@ The will be some errors. Things change, I update the scripts to reflect my local
 
 ## TODOs
 - Restructure apply config script, make it more like a deploy script.
-- Use fish.
+- Use fish (add to install script, use only in gnome terminal)
 - Add the manual steps to this readme. (Currently echoed in the scripts)
+- battery warning
 
 - notification deamon, dunst?
 - clipboard manager, https://github.com/cdown/clipmenu ?
 - nice theme...
 - polybar, cleanup...
 - sxhkd
-  - backlight, volume, etc.
-  - fullscreen and floating toggles.
   - move workspace to other screen.
   - logout menu. perhaps just bspc quit
   - ranger
