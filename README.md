@@ -21,6 +21,7 @@ There will be some errors. Things change, I update the scripts to reflect my loc
 - Use fish (add to install script, use only in gnome terminal)
 - Add the manual steps to this readme. (Currently echoed in the scripts)
 - battery warning
+- deep sleep on lid close
 
 - notification deamon, dunst?
 - clipboard manager, https://github.com/cdown/clipmenu ?
@@ -35,3 +36,4 @@ There will be some errors. Things change, I update the scripts to reflect my loc
 - Fix configs for gedit, terminal, thunar?
 - Add cool ranger plugins.
 - lock screen on lid close.
+- encrypt home dir
