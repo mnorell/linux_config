@@ -17,23 +17,23 @@ There will be some errors. Things change, I update the scripts to reflect my loc
 ```
 
 ## TODOs
-- Restructure apply config script, make it more like a deploy script.
+- Restructure apply config script, make it more like a deploy script that can run multiple times.
 - Use fish (add to install script, use only in gnome terminal)
 - Add the manual steps to this readme. (Currently echoed in the scripts)
+
 - battery warning
 - deep sleep on lid close
+- fingerprint reader
+- swe/gb keyboard, including shortkey switching.
+- lock screen on lid close.
+- encrypt home dir
+
+- select rofi theme in apply script.
 
 - notification deamon, dunst?
 - clipboard manager, https://github.com/cdown/clipmenu ?
 - nice theme...
-- polybar, cleanup...
-- sxhkd
-  - move workspace to other screen.
-  - logout menu. perhaps just bspc quit
-  - ranger
-  - gnome-control-center --class=floating_window
-  - keyboard layout switch
-- Fix configs for gedit, terminal, thunar?
-- Add cool ranger plugins.
-- lock screen on lid close.
-- encrypt home dir
+- polybar, cleanup config.
+- sxhkd, bspwm, move workspace to other screen.
+- Apply configs for gedit, terminal, thunar
+
