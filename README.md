@@ -20,6 +20,7 @@ There will be some errors. Things change, I update the scripts to reflect my loc
 - Restructure apply config script, make it more like a deploy script that can run multiple times.
 - Use fish (add to install script, use only in gnome terminal)
 - Add the manual steps to this readme. (Currently echoed in the scripts)
+- install script installs font for polybar.
 
 - battery warning
 - deep sleep on lid close
