@@ -57,7 +57,7 @@ font-0 = fixed:pixelsize=18;1
 ;font-2 = siji:pixelsize=18;1
 
 modules-left = i3 bspwm
-modules-center = xwindow
+modules-center = xwindow closebutton
 modules-right = pulseaudio backlight-acpi xkeyboard memory cpu wlan battery date
 
 tray-position = right
@@ -81,8 +81,15 @@ inherit = bar/Virtual1
 monitor = Virtual2
 
 modules-left = i3
-modules-center = xwindow
+modules-center = xwindow closebutton
 modules-right = 
+
+
+[module/closebutton]
+type = custom/text
+content = [X]
+click-left = bspc node -c
+
 
 [module/xwindow]
 type = internal/xwindow
