@@ -61,6 +61,9 @@ modules-right = pulseaudio backlight keyboard memory cpu network battery date
 
 tray-position = right
 tray-padding = 2
+;tray-scale = 1.0
+tray-maxsize = 35
+
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -279,6 +282,7 @@ label-empty = Desktop
 [module/closebutton]
 type = custom/text
 content = 
+;content =                                                                                            
 click-left = bspc node -c
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
