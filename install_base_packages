@@ -26,6 +26,7 @@ sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt -y install openjdk-8-jdk openjdk-15-jdk virtualbox curl jq maven npm git
 sudo snap install --classic intellij-idea-community
 #sudo snap install --classic intellij-idea-ultimate
+sudo snap install --classic code
 
 #curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 #sudo apt install -y nodejs
