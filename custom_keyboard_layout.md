@@ -3,7 +3,7 @@
 ## US / SE
 US-keyboard layout with swe-keys added (åäö) added to the regular places.
 
-_On Ubuntu 19.10 (and later?) there ia now a us-variant added by default. That uses right alt for åäö. I want it as default, with original keys accessible by pressing right-alt._
+_On Ubuntu 19.10 (and later?) there ia now a us-variant added by default. That uses right alt for åäö. I want it as default, with original keys accessible by pressing right-alt.
 
 
 `sudo gedit /usr/share/X11/xkb/symbols/se`
@@ -42,7 +42,7 @@ xkb_symbols "us" {
 
 
 ## US / shift-for-numbers
-US-keyboard layout with number row accessible by pressing shift and symbols active by default (i.e. reverse shift behaviour for numbers) (for programming).
+US-keyboard layout with number row accessible by pressing shift and symbols active by default (i.e. reverse shift behaviour for numbers) (for proramming).
 
 Added swe-keys on right alt, as a bonus...
 
@@ -76,3 +76,52 @@ xkb_symbols "shift-for-numbers" {
     include "level3(ralt_switch)"
 };
 ```
+
+
+
+
+
+## GB keyboard with swe chars
+
+`sudo gedit /usr/share/X11/xkb/symbols/se`
+
+Add this
+
+```
+partial alphanumeric_keys
+xkb_symbols "gb" {
+    include "gb"
+
+    name[Group1]="Swedish (GB, with Swedish letters)";
+
+    key <AC10> { [ adiaeresis, Adiaeresis, semicolon, colon ] };
+    key <AC11> { [ odiaeresis, Odiaeresis, apostrophe, at ] };
+    key <AD11> { [ aring, Aring, bracketleft, braceleft ] };
+
+    include "level3(ralt_switch)"
+};
+```
+
+__is this step necessary?__
+`sudo gedit /usr/share/X11/xkb/rules/evdev.xml`
+
+Search for `<name>se</name>`
+
+Add this where appropriate:
+```
+
+        <variant>
+          <configItem>
+            <name>gb</name>
+            <description>Swedish (GB, with Swedish letters))</description>
+          </configItem>
+        </variant>
+```
+
+Switch: 
+`setxkbmap -layout gb`
+`setxkbmap -layout se -variant se`
+Toggle:
+`setxkbmap -query | grep -e "layout:\s*se" >/dev/null && /usr/bin/setxkbmap -layout gb || /usr/bin/setxkbmap -layout se -variant gb`
+
+
