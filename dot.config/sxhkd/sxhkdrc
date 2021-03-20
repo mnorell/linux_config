@@ -16,7 +16,7 @@ super + Escape
 
 # Toggle keyboard layout (grave = backtick)
 super + grave
-    setxkbmap -query | grep -e "layout:\s*se" >/dev/null && /usr/bin/setxkbmap -layout gb || /usr/bin/setxkbmap -layout se -variant gb
+    setxkbmap -query | grep -e "layout:\s*se" >/dev/null && /usr/bin/setxkbmap -layout gb -variant shift-for-numbers || /usr/bin/setxkbmap -layout se -variant gb
 
 #
 # bspwm hotkeys
