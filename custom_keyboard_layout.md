@@ -116,7 +116,7 @@ xkb_symbols "shift-for-numbers" {
 
 
 
-## GB keyboard with swe chars
+## GB / SE
 
 `sudo gedit /usr/share/X11/xkb/symbols/se`
 

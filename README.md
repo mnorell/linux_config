@@ -25,7 +25,6 @@ There will be some errors. Things change, I update the scripts to reflect my loc
 - battery warning
 - deep sleep on lid close
 - fingerprint reader
-- swe/gb keyboard, including shortkey switching.
 - lock screen on lid close.
 - encrypt home dir
 

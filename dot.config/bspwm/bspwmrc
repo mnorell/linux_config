@@ -28,7 +28,7 @@ bspc rule -a gnome-calculator state=floating
 wmname LG3D
 
 # Startup apps.
-polybar Virtual1 &
+polybar top &
 ~/bin/fixmousebuttons.sh
 /usr/bin/unclutter -b
 /usr/bin/nm-applet &
