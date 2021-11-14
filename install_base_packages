@@ -24,9 +24,9 @@ sudo gem i fusuma
 #image viewer
 #screenshot
 #startup disk creator
-sudo apt -y install gnome-calculator tree gnome-system-monitor vivaldi-stable usb-creator-gtk 
+sudo apt -y install gnome-calculator tree gnome-system-monitor usb-creator-gtk 
 
-
+# Vivaldi...
 # Chrome browser
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
