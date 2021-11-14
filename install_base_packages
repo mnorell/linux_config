@@ -27,6 +27,7 @@ sudo gem i fusuma
 sudo apt -y install gnome-calculator tree gnome-system-monitor usb-creator-gtk 
 
 # Vivaldi...
+echo "Install Vivaldi manually, https://vivaldi.com/sv/download/" 
 # Chrome browser
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
