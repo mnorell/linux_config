@@ -4,10 +4,19 @@ sudo apt update
 sudo apt -y upgrade
 
 # Regolith
-sudo add-apt-repository -y ppa:regolith-linux/release
-sudo apt -y install regolith-desktop-complete
+#sudo add-apt-repository -y ppa:regolith-linux/release
+#sudo apt -y install regolith-desktop-complete
 
-sudo apt -y install bspwm
+# Desktop environment
+sudo apt -y install bspwm polybar suckless-tools thunar gedit ranger highlight gnome-terminal gnome-tweaks fish
+
+
+# Hardware support
+sudo apt -y install powertop xbacklight
+# Touchpad
+sudo apt -y install ruby xdotool libinput-tools
+sudo gem i fusuma
+
 
 # Standard packages
 # Terminator? mousepad? sudo snap install gotop?
@@ -15,7 +24,8 @@ sudo apt -y install bspwm
 #image viewer
 #screenshot
 #startup disk creator
-sudo apt -y install polybar suckless-tools highlight ranger gnome-terminal thunar gedit gnome-tweaks gnome-calculator tree gnome-system-monitor powertop xbacklight
+sudo apt -y install gnome-calculator tree gnome-system-monitor vivaldi-stable usb-creator-gtk 
+
 
 # Chrome browser
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -23,21 +33,14 @@ sudo dpkg --install google-chrome-stable_current_amd64.deb
 
 
 # Development tools
-sudo apt -y install openjdk-8-jdk openjdk-15-jdk virtualbox curl jq maven npm git
+sudo apt -y install openjdk-8-jdk openjdk-17-jdk virtualbox curl jq maven git
 sudo snap install --classic intellij-idea-community
 #sudo snap install --classic intellij-idea-ultimate
 sudo snap install --classic code
-
-#curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-#sudo apt install -y nodejs
-#sudo snap install node --channel=14/stable --classic
+sudo snap install --classic node
 sudo npm install -g @angular/cli
 
 
-# Insync
-echo "INSTALL INSYNC MANUALLY..."
-
-# Looks...
-#sudo apt -y install  numix-gtk-theme numix-icon-theme
-echo "INSTALL FONTS..."
+# Looks
+sudo apt -y install fonts-jetbrains-mono
 

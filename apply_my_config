@@ -21,20 +21,15 @@ sudo mkdir -p /etc/X11/xorg.conf.d/
 sudo cp etc/X11/xorg.conf.d/20-intel.conf /etc/X11/xorg.conf.d/
 
 # Polybar
-#cp -r dot.config/polybar ~/.config/
+cp -r dot.config/polybar ~/.config/
 
-
-# Terminator
-#cp -r dot.config/terminator ~/.config/
 
 # Nano
 #cp dot.nanorc ~/.nanorc
 
 # Mouse and keyboard.
 mkdir ~/bin
-cp fixmousebuttons.sh ~/bin/
-sudo apt -y install ruby xdotool libinput-tools
-sudo gem i fusuma
+cp bin/fixmousebuttons.sh ~/bin/
 cp -r dot.config/fusuma ~/.config/
 sudo gpasswd -a $USER input
 
@@ -46,14 +41,10 @@ echo "FIX KEYBOARD MANUALLY..."
 sudo sed -i 's/^AutoEnable=.*/AutoEnable=false/g' /etc/bluetooth/main.conf
 
 # Jetbrains mono font * (check for later version)
-#wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip
-#unzip JetBrainsMono-1.0.3.zip 
-#sudo mv JetBrainsMono-1.0.3/ttf/*.ttf /usr/share/fonts/
-#rm -rf JetBrainsMono-1.0.3*
 sudo apt -y install fonts-jetbrains-mono
 
 # Set my PS1. (todo check if already added)
-cat nice_PS1 >> ~/.bashrc
+cat other/nice_PS1 >> ~/.bashrc
 
 # Gnome.
 ## Apply theme & icons.

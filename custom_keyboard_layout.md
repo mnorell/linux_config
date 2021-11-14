@@ -129,8 +129,8 @@ xkb_symbols "gb" {
 
     name[Group1]="Swedish (GB, with Swedish letters)";
 
-    key <AC10> { [ adiaeresis, Adiaeresis, semicolon, colon ] };
-    key <AC11> { [ odiaeresis, Odiaeresis, apostrophe, at ] };
+    key <AC10> { [ odiaeresis, Odiaeresis, apostrophe, at ] };
+    key <AC11> { [ adiaeresis, Adiaeresis, semicolon, colon ] };
     key <AD11> { [ aring, Aring, bracketleft, braceleft ] };
 
     include "level3(ralt_switch)"
