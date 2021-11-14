@@ -23,7 +23,6 @@ sudo cp etc/X11/xorg.conf.d/20-intel.conf /etc/X11/xorg.conf.d/
 # Polybar
 cp -r dot.config/polybar ~/.config/
 
-
 # Nano
 #cp dot.nanorc ~/.nanorc
 
@@ -35,6 +34,9 @@ sudo gpasswd -a $USER input
 
 echo "FIX KEYBOARD MANUALLY..."
 
+# Terminal (gnome-term + fish).
+# Set my PS1. (todo check if already added)
+cat other/nice_PS1 >> ~/.bashrc
 
 # Disable bluetooth. 
 #Set AutoEnable=false in /etc/bluetooth/main.conf
@@ -42,9 +44,6 @@ sudo sed -i 's/^AutoEnable=.*/AutoEnable=false/g' /etc/bluetooth/main.conf
 
 # Jetbrains mono font * (check for later version)
 sudo apt -y install fonts-jetbrains-mono
-
-# Set my PS1. (todo check if already added)
-cat other/nice_PS1 >> ~/.bashrc
 
 # Gnome.
 ## Apply theme & icons.
