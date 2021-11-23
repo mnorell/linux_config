@@ -8,10 +8,9 @@ sudo apt -y upgrade
 #sudo apt -y install regolith-desktop-complete
 
 # Desktop environment
-sudo apt -y install bspwm polybar suckless-tools thunar gedit ranger highlight gnome-terminal gnome-tweaks fish
+sudo apt -y install bspwm polybar rofi suckless-tools thunar gedit ranger highlight gnome-terminal gnome-tweaks fish
 
 
-# Hardware support
 sudo apt -y install powertop xbacklight
 # Touchpad
 sudo apt -y install ruby xdotool libinput-tools
