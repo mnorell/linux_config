@@ -19,6 +19,10 @@
 #sudo cp etc/regolith/styles/root        /etc/regolith/styles/
 #sudo cp etc/regolith/styles/theme-numix /etc/regolith/styles/
 
+# Scale fonts
+cat other/profile >> ~/.profile
+cp other/Xresources ~/.Xresources
+
 # Add .config
 cp -r dot.config/* ~/.config/
 
