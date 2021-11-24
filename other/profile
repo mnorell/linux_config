@@ -9,6 +9,6 @@ export QT_SCALE_FACTOR=2
 export QT_FONT_DPI=96
 
 # Scale down to 175% (200 / 175 = ~1.14)
-xrandr --output $(xrandr --query | grep " connected" | awk '{print $1}') --scale '1.14x1.14'
+( sleep 10 ; xrandr --output $(xrandr --query | grep " connected" | awk '{print $1}') --scale '1.14x1.14' ) &
 
 
