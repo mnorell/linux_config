@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#sudo apt update
+#sudo apt -y upgrade
+
+# Desktop environment
+#sudo apt -y install bspwm polybar rofi suckless-tools thunar gedit ranger highlight gnome-terminal gnome-tweaks fish
+sudo yum install -y bspwm sxhkd polybar rofi thunar gedit ranger highlight gnome-terminal fish network-manager-applet
+
+# Theme
+#sudo apt -y install numix-gtk-theme 
+
+
+
+# Standard packages
+sudo yum install -y tree chromium gnome-system-monitor gnome-calculator gnome-tweaks gnome-screenshot
+
+
+# Development tools
+#sudo apt -y install openjdk-8-jdk openjdk-17-jdk virtualbox curl jq maven git
+#sudo snap install --classic intellij-idea-community
+#sudo snap install --classic intellij-idea-ultimate
+#sudo snap install --classic code
+#sudo snap install --classic node
+#sudo npm install -g @angular/cli
+
+
+# Looks
+#sudo apt -y install fonts-jetbrains-mono
+
