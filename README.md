@@ -16,6 +16,9 @@ There will be some errors. Things change, I update the scripts to reflect my loc
 > Perform manual steps...
 ```
 
+## Manual steps.
+Install vivaldi, [download here](https://vivaldi.com/sv/download/).
+
 ## TODOs
 - Restructure apply config script, make it more like a deploy script that can run multiple times.
 - Use fish (add to install script, use only in gnome terminal)
