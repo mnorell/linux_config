@@ -17,7 +17,7 @@
 
 
 # Scale fonts
-cp etc/profile.d/scale_up /etc/profile.d/
+sudo cp etc/profile.d/scale_up /etc/profile.d/
 cp other/Xresources ~/.Xresources
 
 # Add .config
