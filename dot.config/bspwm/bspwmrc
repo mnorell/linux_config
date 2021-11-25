@@ -33,5 +33,8 @@ polybar top &
 /usr/bin/unclutter -b
 /usr/bin/nm-applet &
 
+# Scale down gui
+( sleep 10 ; xrandr --output $(xrandr --query | grep " connected" | awk '{print $1}') --scale '1.14x1.14' ) &
+
 # bgcolor
 xsetroot -solid "#888888"

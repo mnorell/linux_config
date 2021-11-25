@@ -11,16 +11,13 @@
 # intellij?
 # vscode
 
-# Regolith
-#sudo cp /etc/regolith/i3/config /etc/regolith/i3/config.bak
-#sudo cp etc/regolith/i3/config /etc/regolith/i3/config
+# TODO
+# gnome terminal profile...
 
-#sudo cp /etc/regolith/styles/root       /etc/regolith/styles/root.bak
-#sudo cp etc/regolith/styles/root        /etc/regolith/styles/
-#sudo cp etc/regolith/styles/theme-numix /etc/regolith/styles/
+
 
 # Scale fonts
-cat other/profile >> ~/.profile
+cp etc/profile.d/scale_up /etc/profile.d/
 cp other/Xresources ~/.Xresources
 
 # Add .config
@@ -32,9 +29,9 @@ sudo cp etc/X11/xorg.conf.d/20-intel.conf /etc/X11/xorg.conf.d/
 
 # Polybar
 cp -r dot.config/polybar ~/.config/
-
-# Nano
-#cp dot.nanorc ~/.nanorc
+# Polybar font
+mkdir -p ~/.local/share/fonts
+cp dot.local/share/fonts/* ~/.local/share/fonts/
 
 # Mouse and keyboard.
 mkdir ~/bin
@@ -47,6 +44,9 @@ echo "FIX KEYBOARD MANUALLY..."
 # Terminal (gnome-term + fish).
 # Set my PS1. (todo check if already added)
 cat other/nice_PS1 >> ~/.bashrc
+
+# Use fish for my terminal, but not as the default shell
+echo "fish" >> ~/.bashrc
 
 # Disable bluetooth. 
 #Set AutoEnable=false in /etc/bluetooth/main.conf
