@@ -7,7 +7,7 @@ sudo apt -y upgrade
 sudo apt -y install bspwm polybar rofi suckless-tools thunar gedit ranger highlight gnome-terminal gnome-tweaks fish
 
 # Theme
-sudp apt -y install numix-gtk-theme
+sudp apt -y install numix-gtk-theme 
 
 # HW stuff
 sudo apt -y install powertop xbacklight
