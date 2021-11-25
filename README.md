@@ -13,11 +13,12 @@ There will be some errors. Things change, I update the scripts to reflect my loc
 > ./install_base_packages
 > ./apply_my_config
 
-> Perform manual steps...
 ```
 
 ## Manual steps.
-Install vivaldi, [download here](https://vivaldi.com/sv/download/).
+- Install vivaldi, [download here](https://vivaldi.com/sv/download/).
+- Setup custom keyboard layout.
+
 
 ## TODOs
 - Restructure apply config script, make it more like a deploy script that can run multiple times.
@@ -36,7 +37,6 @@ Install vivaldi, [download here](https://vivaldi.com/sv/download/).
 - notification deamon, dunst?
 - clipboard manager, https://github.com/cdown/clipmenu ?
 - nice theme...
-- polybar, cleanup config.
 - sxhkd, bspwm, move workspace to other screen.
 - Apply configs for gedit, terminal, thunar
 

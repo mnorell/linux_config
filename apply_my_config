@@ -39,8 +39,6 @@ cp bin/fixmousebuttons.sh ~/bin/
 cp -r dot.config/fusuma ~/.config/
 sudo gpasswd -a $USER input
 
-echo "FIX KEYBOARD MANUALLY..."
-
 # Terminal (gnome-term + fish).
 # Set my PS1. (todo check if already added)
 cat other/nice_PS1 >> ~/.bashrc
@@ -63,9 +61,6 @@ gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
 #gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans 11'
 #gsettings set org.gnome.desktop.interface font-name 'Noto Sans 11'
-
-## Set display scaling to 100%
-echo "SET gnome control center > devices > monitor > scaling to 100%"
 
 # Gedit
 gsettings set org.gnome.gedit.preferences.editor auto-indent true
