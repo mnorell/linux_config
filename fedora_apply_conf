@@ -1,0 +1,116 @@
+#!/bin/bash
+
+# TODO 
+# install highlighting sudo apt-get install highlight 
+# make it work with ranger preview, and solarized.
+# install gnome-term and make it not show border, config it via this script.
+
+# TODO
+# Thunar
+# Term + fish
+# intellij?
+# vscode
+
+# TODO
+# gnome terminal profile...
+
+
+
+# Scale fonts
+sudo cp etc/profile.d/scale_up /etc/profile.d/
+cp other/Xresources ~/.Xresources
+
+# Add .config
+cp -r dot.config/* ~/.config/
+
+# Polybar
+cp -r dot.config/polybar ~/.config/
+# Polybar font
+mkdir -p ~/.local/share/fonts
+cp dot.local/share/fonts/* ~/.local/share/fonts/
+
+# Terminal (gnome-term + fish).
+# Set my PS1. (todo check if already added)
+cat other/nice_PS1 >> ~/.bashrc
+
+# Use fish for my terminal, but not as the default shell
+echo "fish" >> ~/.bashrc
+
+# Gnome.
+## Apply theme & icons.
+gsettings set org.gnome.desktop.wm.preferences theme 'Numix'
+gsettings set org.gnome.desktop.interface gtk-theme 'Numix'
+gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+
+## Set fonts.
+#gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Noto Sans 11'
+gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
+#gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans 11'
+#gsettings set org.gnome.desktop.interface font-name 'Noto Sans 11'
+
+# Gedit
+gsettings set org.gnome.gedit.preferences.editor auto-indent true
+gsettings set org.gnome.gedit.preferences.editor auto-save false
+gsettings set org.gnome.gedit.preferences.editor auto-save-interval uint32 10
+gsettings set org.gnome.gedit.preferences.editor background-pattern 'grid'
+gsettings set org.gnome.gedit.preferences.editor bracket-matching true
+gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
+gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
+gsettings set org.gnome.gedit.preferences.editor display-overview-map true
+gsettings set org.gnome.gedit.preferences.editor display-right-margin true
+gsettings get org.gnome.gedit.preferences.editor use-default-font true
+gsettings set org.gnome.gedit.preferences.editor ensure-trailing-newline true
+gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
+gsettings set org.gnome.gedit.preferences.editor insert-spaces true
+gsettings set org.gnome.gedit.preferences.editor max-undo-actions 2000
+gsettings set org.gnome.gedit.preferences.editor restore-cursor-position true
+gsettings set org.gnome.gedit.preferences.editor right-margin-position uint32 120
+gsettings set org.gnome.gedit.preferences.editor scheme 'solarized-light'
+gsettings set org.gnome.gedit.preferences.editor search-highlighting true
+gsettings set org.gnome.gedit.preferences.editor smart-home-end 'after'
+gsettings set org.gnome.gedit.preferences.editor syntax-highlighting true
+gsettings set org.gnome.gedit.preferences.editor tabs-size uint32 4
+gsettings set org.gnome.gedit.preferences.editor use-default-font false
+gsettings set org.gnome.gedit.preferences.editor wrap-last-split-mode 'word'
+gsettings set org.gnome.gedit.preferences.editor wrap-mode 'word'
+gsettings set org.gnome.gedit.preferences.ui bottom-panel-visible false
+gsettings set org.gnome.gedit.preferences.ui max-recents uint32 5
+gsettings set org.gnome.gedit.preferences.ui show-tabs-mode 'auto'
+gsettings set org.gnome.gedit.preferences.ui side-panel-visible false
+gsettings set org.gnome.gedit.preferences.ui statusbar-visible true
+gsettings set org.gnome.gedit.preferences.ui toolbar-visible true
+
+# Mousepad
+#gsettings set org.xfce.mousepad.preferences.view auto-indent true
+#gsettings set org.xfce.mousepad.preferences.view color-scheme 'solarized-light'
+#gsettings set org.xfce.mousepad.preferences.view highlight-current-line true
+#gsettings set org.xfce.mousepad.preferences.view indent-on-tab true
+#gsettings set org.xfce.mousepad.preferences.view indent-width -1
+#gsettings set org.xfce.mousepad.preferences.view insert-spaces true
+#gsettings set org.xfce.mousepad.preferences.view match-braces true
+#gsettings set org.xfce.mousepad.preferences.view right-margin-position 100
+#gsettings set org.xfce.mousepad.preferences.view show-line-endings false
+#gsettings set org.xfce.mousepad.preferences.view show-line-marks false
+#gsettings set org.xfce.mousepad.preferences.view show-line-numbers true
+#gsettings set org.xfce.mousepad.preferences.view show-right-margin true
+#gsettings set org.xfce.mousepad.preferences.view show-whitespace false
+#gsettings set org.xfce.mousepad.preferences.view smart-home-end 'disabled'
+#gsettings set org.xfce.mousepad.preferences.view tab-width 4
+#gsettings set org.xfce.mousepad.preferences.view use-default-monospace-font true
+#gsettings set org.xfce.mousepad.preferences.view word-wrap true
+#gsettings set org.xfce.mousepad.preferences.window always-show-tabs false
+#gsettings set org.xfce.mousepad.preferences.window cycle-tabs false
+#gsettings set org.xfce.mousepad.preferences.window default-tab-sizes '2,3,4,8'
+#gsettings set org.xfce.mousepad.preferences.window menubar-visible-in-fullscreen 'auto'
+#gsettings set org.xfce.mousepad.preferences.window menubar-visible false
+#gsettings set org.xfce.mousepad.preferences.window path-in-title true
+#gsettings set org.xfce.mousepad.preferences.window recent-menu-items 10
+#gsettings set org.xfce.mousepad.preferences.window remember-position false
+#gsettings set org.xfce.mousepad.preferences.window remember-size true
+#gsettings set org.xfce.mousepad.preferences.window remember-state true
+#gsettings set org.xfce.mousepad.preferences.window statusbar-visible-in-fullscreen 'auto'
+#gsettings set org.xfce.mousepad.preferences.window statusbar-visible true
+#gsettings set org.xfce.mousepad.preferences.window toolbar-icon-size 'small-toolbar'
+#gsettings set org.xfce.mousepad.preferences.window toolbar-style 'icons'
+#gsettings set org.xfce.mousepad.preferences.window toolbar-visible false
+
