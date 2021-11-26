@@ -1,15 +1,10 @@
 #!/bin/bash
 
-#sudo apt update
-#sudo apt -y upgrade
-
 # Desktop environment
-#sudo apt -y install bspwm polybar rofi suckless-tools thunar gedit ranger highlight gnome-terminal gnome-tweaks fish
 sudo yum install -y bspwm sxhkd wmname xrandr polybar rofi thunar gedit ranger highlight gnome-terminal fish network-manager-applet
 
 # Theme
 #sudo apt -y install numix-gtk-theme 
-
 
 
 # Standard packages
@@ -26,5 +21,4 @@ sudo yum install -y tree chromium gnome-system-monitor gnome-calculator gnome-tw
 
 
 # Looks
-#sudo apt -y install fonts-jetbrains-mono
-
+sudo yum install -y jetbrains-mono-fonts

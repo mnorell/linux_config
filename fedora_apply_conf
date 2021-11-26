@@ -33,18 +33,29 @@ cp dot.local/share/fonts/* ~/.local/share/fonts/
 # Set my PS1. (todo check if already added)
 cat other/nice_PS1 >> ~/.bashrc
 
-# Use fish for my terminal, but not as the default shell
-echo "fish" >> ~/.bashrc
-
 # Gnome.
+# Use fish for my terminal, but not as the default shell
+PROFILE_PATH=/org/gnome/terminal/legacy/profiles:/:11111111-1111-1111-1111-111111111111
+dconf write /org/gnome/terminal/legacy/profiles:/list "['11111111-1111-1111-1111-111111111111']"
+dconf write $PROFILE_PATH/visible-name "'Solarized fish'"
+dconf write $PROFILE_PATH/cursor-blink-mode "'on'"
+dconf write $PROFILE_PATH/scrollback-unlimited "'true'"
+dconf write $PROFILE_PATH/use-theme-colors "'false'"
+dconf write $PROFILE_PATH/custom-command "'fish'"
+dconf write $PROFILE_PATH/use-custom-command "'true'"
+dconf write $PROFILE_PATH/background-color "'rgb(253,246,227)'"
+dconf write $PROFILE_PATH/foreground-color "'rgb(101,123,131)'"
+dconf write $PROFILE_PATH/palette "['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']"
+
 ## Apply theme & icons.
-gsettings set org.gnome.desktop.wm.preferences theme 'Numix'
-gsettings set org.gnome.desktop.interface gtk-theme 'Numix'
-gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+#gsettings set org.gnome.desktop.wm.preferences theme 'Numix'
+#gsettings set org.gnome.desktop.interface gtk-theme 'Numix'
+#gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 
 ## Set fonts.
+#dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrains Mono 10'"
 #gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Noto Sans 11'
-gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
+gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono 10'
 #gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans 11'
 #gsettings set org.gnome.desktop.interface font-name 'Noto Sans 11'
 
