@@ -2,8 +2,6 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-#bspc monitor Virtual1 -d 1 3 5 7 9
-#bspc monitor Virtual2 -d 2 4 6 8 0
 ~/.config/bspwm/refresh_spaces.sh
 
 bspc config border_width  8
@@ -33,6 +31,8 @@ polybar top &
 ~/bin/fixmousebuttons.sh
 /usr/bin/unclutter -b
 /usr/bin/nm-applet &
+xsetroot -cursor_name left_ptr &
+
 
 # Scale down gui
 ( sleep 10 ; xrandr --output $(xrandr --query | grep " connected" | awk '{print $1}') --scale '1.14x1.14' ) &

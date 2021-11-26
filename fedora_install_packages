@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Desktop environment
-sudo yum install -y bspwm sxhkd wmname xrandr polybar rofi thunar gedit ranger highlight gnome-terminal fish network-manager-applet
+sudo yum install -y bspwm sxhkd wmname xrandr xsetroot polybar rofi thunar gedit ranger highlight gnome-terminal fish network-manager-applet
 
 # Theme
 #sudo apt -y install numix-gtk-theme 
