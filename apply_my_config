@@ -40,8 +40,7 @@ dconf write $PROFILE_PATH/palette "['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,1
 #gsettings set org.gnome.desktop.interface gtk-theme 'Numix'
 #gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 
-## Set fonts.
-#dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrains Mono 10'"
+## Set fonts. (TODO check if fedora, then name font 'JetBrains Mono 10')
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
 
 # Gedit
