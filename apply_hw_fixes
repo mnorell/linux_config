@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Fix intel graphics issues.
+sudo mkdir -p /etc/X11/xorg.conf.d/
+sudo cp etc/X11/xorg.conf.d/20-intel.conf /etc/X11/xorg.conf.d/
+
+# Disable bluetooth. 
+#Set AutoEnable=false in /etc/bluetooth/main.conf
+sudo sed -i 's/^AutoEnable=.*/AutoEnable=false/g' /etc/bluetooth/main.conf
+
+# Mouse and keyboard.
+mkdir ~/bin
+cp bin/fixmousebuttons.sh ~/bin/
+cp -r dot.config/fusuma ~/.config/
+sudo gpasswd -a $USER input
+
+
