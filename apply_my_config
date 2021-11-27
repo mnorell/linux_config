@@ -7,30 +7,20 @@ cp other/Xresources ~/.Xresources
 # Add .config
 cp -r dot.config/* ~/.config/
 
-# Fix intel graphics issues.
-sudo mkdir -p /etc/X11/xorg.conf.d/
-sudo cp etc/X11/xorg.conf.d/20-intel.conf /etc/X11/xorg.conf.d/
-
 # Polybar
 cp -r dot.config/polybar ~/.config/
 # Polybar font
 mkdir -p ~/.local/share/fonts
 cp dot.local/share/fonts/* ~/.local/share/fonts/
 
-# Mouse and keyboard.
-mkdir ~/bin
-cp bin/fixmousebuttons.sh ~/bin/
-cp -r dot.config/fusuma ~/.config/
-sudo gpasswd -a $USER input
-
 # Set my PS1. (todo check if already added)
 cat other/nice_PS1 >> ~/.bashrc
 
-# Disable bluetooth. 
-#Set AutoEnable=false in /etc/bluetooth/main.conf
-sudo sed -i 's/^AutoEnable=.*/AutoEnable=false/g' /etc/bluetooth/main.conf
-
 # Gnome.
+# GTK
+gsettings set org.gnome.mutter attach-modal-dialogs false
+gsettings set org.gnome.mutter edge-tiling false
+
 # Configure terminal. Use fish for my terminal, but not as the default shell.
 dconf write /org/gnome/terminal/legacy/default-show-menubar "false"
 PROFILE_PATH=/org/gnome/terminal/legacy/profiles:/:11111111-1111-1111-1111-111111111111
@@ -46,20 +36,18 @@ dconf write $PROFILE_PATH/foreground-color "'rgb(101,123,131)'"
 dconf write $PROFILE_PATH/palette "['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']"
 
 ## Apply theme & icons.
-gsettings set org.gnome.desktop.wm.preferences theme 'Numix'
-gsettings set org.gnome.desktop.interface gtk-theme 'Numix'
-gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+#gsettings set org.gnome.desktop.wm.preferences theme 'Numix'
+#gsettings set org.gnome.desktop.interface gtk-theme 'Numix'
+#gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 
 ## Set fonts.
-#gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Noto Sans 11'
+#dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrains Mono 10'"
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
-#gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans 11'
-#gsettings set org.gnome.desktop.interface font-name 'Noto Sans 11'
 
 # Gedit
 gsettings set org.gnome.gedit.preferences.editor auto-indent true
 gsettings set org.gnome.gedit.preferences.editor auto-save false
-gsettings set org.gnome.gedit.preferences.editor auto-save-interval uint32 10
+gsettings set org.gnome.gedit.preferences.editor auto-save-interval 10
 gsettings set org.gnome.gedit.preferences.editor background-pattern 'grid'
 gsettings set org.gnome.gedit.preferences.editor bracket-matching true
 gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
@@ -72,17 +60,17 @@ gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
 gsettings set org.gnome.gedit.preferences.editor insert-spaces true
 gsettings set org.gnome.gedit.preferences.editor max-undo-actions 2000
 gsettings set org.gnome.gedit.preferences.editor restore-cursor-position true
-gsettings set org.gnome.gedit.preferences.editor right-margin-position uint32 120
+gsettings set org.gnome.gedit.preferences.editor right-margin-position 120
 gsettings set org.gnome.gedit.preferences.editor scheme 'solarized-light'
 gsettings set org.gnome.gedit.preferences.editor search-highlighting true
 gsettings set org.gnome.gedit.preferences.editor smart-home-end 'after'
 gsettings set org.gnome.gedit.preferences.editor syntax-highlighting true
-gsettings set org.gnome.gedit.preferences.editor tabs-size uint32 4
+gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 gsettings set org.gnome.gedit.preferences.editor use-default-font false
 gsettings set org.gnome.gedit.preferences.editor wrap-last-split-mode 'word'
 gsettings set org.gnome.gedit.preferences.editor wrap-mode 'word'
 gsettings set org.gnome.gedit.preferences.ui bottom-panel-visible false
-gsettings set org.gnome.gedit.preferences.ui max-recents uint32 5
+gsettings set org.gnome.gedit.preferences.ui max-recents 5
 gsettings set org.gnome.gedit.preferences.ui show-tabs-mode 'auto'
 gsettings set org.gnome.gedit.preferences.ui side-panel-visible false
 gsettings set org.gnome.gedit.preferences.ui statusbar-visible true
