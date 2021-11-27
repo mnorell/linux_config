@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# TODO 
-# install highlighting sudo apt-get install highlight 
-# make it work with ranger preview, and solarized.
-
-# TODO
-# Thunar config
-# intellij config
-# vscode config
-
-
-
 # Scale fonts
 sudo cp etc/profile.d/scale_up /etc/profile.d/
 cp other/Xresources ~/.Xresources
