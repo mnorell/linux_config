@@ -11,6 +11,7 @@ sudo sed -i 's/^AutoEnable=.*/AutoEnable=false/g' /etc/bluetooth/main.conf
 # Mouse and keyboard.
 mkdir ~/bin
 cp bin/fixmousebuttons.sh ~/bin/
+chmod +x ~/bin/fixmousebuttons.sh
 cp -r dot.config/fusuma ~/.config/
 sudo gpasswd -a $USER input
 
