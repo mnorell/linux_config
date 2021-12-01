@@ -137,7 +137,7 @@ xkb_symbols "gb" {
 };
 ```
 
-__is this step necessary?__
+__is this step necessary?__ Nope, not when switching with below toggle command.
 `sudo gedit /usr/share/X11/xkb/rules/evdev.xml`
 
 Search for `<name>se</name>`
