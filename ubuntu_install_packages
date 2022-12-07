@@ -36,6 +36,7 @@ sudo snap install --classic intellij-idea-community
 sudo snap install --classic code
 sudo snap install --classic node
 sudo npm install -g @angular/cli
+sudo snap install mqtt-explorer
 
 
 # Looks
