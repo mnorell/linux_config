@@ -9,7 +9,7 @@ Currently work in progress, I'm transfering to bspwm from regolith/i3.
 ## run.
 There will be some errors. Things change, I update the scripts to reflect my local changes and test them when I perform my next install...
 ```
-> Install Xubtunu 22.10
+> Install Ubuntu 22.10
 > ./ubuntu_install_packages
 > ./apply_my_config
 > ./apply_hw_fixes
