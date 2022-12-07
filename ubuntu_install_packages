@@ -4,7 +4,7 @@ sudo apt update
 sudo apt -y upgrade
 
 # Desktop environment
-sudo apt -y install bspwm x11-xserver-utils polybar rofi suckless-tools thunar gedit ranger highlight gnome-terminal gnome-tweaks fish dconf-cli
+sudo apt -y install bspwm x11-xserver-utils polybar rofi suckless-tools thunar gedit ranger highlight gnome-terminal gnome-tweaks fish dconf-cli usb-creator-gtk 
 
 # Theme
 sudo apt -y install numix-gtk-theme 
