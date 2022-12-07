@@ -4,7 +4,7 @@ sudo apt update
 sudo apt -y upgrade
 
 # Desktop environment
-sudo apt -y install bspwm x11-xserver-utils polybar rofi suckless-tools thunar gedit ranger highlight gnome-terminal gnome-tweaks fish
+sudo apt -y install bspwm x11-xserver-utils polybar rofi suckless-tools thunar gedit ranger highlight gnome-terminal gnome-tweaks fish dconf-cli
 
 # Theme
 sudo apt -y install numix-gtk-theme 
@@ -30,7 +30,7 @@ sudo dpkg --install google-chrome-stable_current_amd64.deb
 
 
 # Development tools
-sudo apt -y install openjdk-8-jdk openjdk-17-jdk virtualbox curl jq maven git
+sudo apt -y install openjdk-8-jdk openjdk-19-jdk virtualbox curl jq maven git
 sudo snap install --classic intellij-idea-community
 #sudo snap install --classic intellij-idea-ultimate
 sudo snap install --classic code

@@ -9,15 +9,16 @@ Currently work in progress, I'm transfering to bspwm from regolith/i3.
 ## run.
 There will be some errors. Things change, I update the scripts to reflect my local changes and test them when I perform my next install...
 ```
-> Install Xubtunu 21.10
-> ./install_base_packages
+> Install Xubtunu 22.10
+> ./ubuntu_install_packages
 > ./apply_my_config
-
+> ./apply_hw_fixes
 ```
 
 ## Manual steps.
 - Install vivaldi, [download here](https://vivaldi.com/sv/download/).
 - Setup custom keyboard layout.
+- deep-sleep-fixes
 
 
 ## TODOs

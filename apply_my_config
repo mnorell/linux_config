@@ -53,7 +53,7 @@ gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
 gsettings set org.gnome.gedit.preferences.editor display-overview-map true
 gsettings set org.gnome.gedit.preferences.editor display-right-margin true
-gsettings get org.gnome.gedit.preferences.editor use-default-font true
+gsettings set org.gnome.gedit.preferences.editor use-default-font true
 gsettings set org.gnome.gedit.preferences.editor ensure-trailing-newline true
 gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
 gsettings set org.gnome.gedit.preferences.editor insert-spaces true
@@ -69,9 +69,9 @@ gsettings set org.gnome.gedit.preferences.editor use-default-font false
 gsettings set org.gnome.gedit.preferences.editor wrap-last-split-mode 'word'
 gsettings set org.gnome.gedit.preferences.editor wrap-mode 'word'
 gsettings set org.gnome.gedit.preferences.ui bottom-panel-visible false
-gsettings set org.gnome.gedit.preferences.ui max-recents 5
+#gsettings set org.gnome.gedit.preferences.ui max-recents 5
 gsettings set org.gnome.gedit.preferences.ui show-tabs-mode 'auto'
 gsettings set org.gnome.gedit.preferences.ui side-panel-visible false
 gsettings set org.gnome.gedit.preferences.ui statusbar-visible true
-gsettings set org.gnome.gedit.preferences.ui toolbar-visible true
+#gsettings set org.gnome.gedit.preferences.ui toolbar-visible true
 
