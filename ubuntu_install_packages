@@ -10,7 +10,7 @@ sudo apt -y install bspwm x11-xserver-utils polybar rofi suckless-tools thunar g
 sudo apt -y install numix-gtk-theme 
 
 # HW stuff
-sudo apt -y install powertop xbacklight
+sudo apt -y install powertop xbacklight xserver-xorg-input-synaptics
 
 # Touchpad
 sudo apt -y install ruby xdotool libinput-tools
