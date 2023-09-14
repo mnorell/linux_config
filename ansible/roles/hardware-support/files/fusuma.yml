@@ -1,0 +1,32 @@
+swipe:
+  3: 
+    left: 
+      command: 'xdotool key alt+Right'
+    right: 
+      command: 'xdotool key alt+Left'
+#    up: 
+#      command: 'xdotool key ctrl+minus'
+#    down: 
+#      command: 'xdotool key ctrl+plus'
+#  4:
+#    left: 
+#      command: 'xdotool key ctrl+alt+Right'
+#    right: 
+#      command: 'xdotool key ctrl+alt+Left'
+#    up: 
+#      command: 'xdotool key alt+F10'
+#    down: 
+#      command: 'xdotool key ctrl+alt+Down'
+#pinch:
+#  in:
+#    command: 'xdotool key ctrl+plus'
+#  out:
+#    command: 'xdotool key ctrl+minus'
+
+#threshold:
+#  swipe: 0.4
+#  pinch: 0.3
+
+#interval:
+#  swipe: 0.2
+#  pinch: 0.2

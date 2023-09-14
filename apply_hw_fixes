@@ -14,5 +14,3 @@ cp bin/fixmousebuttons.sh ~/bin/
 chmod +x ~/bin/fixmousebuttons.sh
 cp -r dot.config/fusuma ~/.config/
 sudo gpasswd -a $USER input
-
-

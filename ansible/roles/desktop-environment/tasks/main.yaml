@@ -16,23 +16,6 @@
       - numix-gtk-theme
     state: present
 
-- name: Install hardware support
-  become: true
-  ansible.builtin.package:
-    name: 
-      - powertop
-      - xbacklight
-      - xserver-xorg-input-synaptics
-      - ruby # get gem, for next step.
-      - libinput-tools
-    state: present
-
-- name: Install hardware support, from gem
-  community.general.gem:
-    name: fusuma
-    version: 1.0
-    state: present
-
 # - name: Import APT repo keys
 #   become: true
 #   apt_key:

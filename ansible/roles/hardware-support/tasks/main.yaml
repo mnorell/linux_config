@@ -1,0 +1,46 @@
+
+- name: Install hardware support
+  become: true
+  ansible.builtin.package:
+    name: 
+      - powertop
+      - xserver-xorg-input-synaptics
+      - ruby # get gem, for next step.
+      - libinput-tools
+    state: present
+
+- name: Install hardware support, from gem
+  community.general.gem:
+    name: fusuma
+    version: 1.0
+    state: present
+
+- name: Fix intel graphics issues
+  ansible.builtin.copy:
+    src: 20-intel.conf
+    dest: etc/X11/xorg.conf.d/
+    # mode: '0644'
+
+- name: Add script for fixing mouse button behaviour
+  ansible.builtin.copy:
+    src: fusuma.yml
+    dest: ~/.config/config.yml
+    # mode: '0644'
+
+- name: Add fusuma config, for multitouch mousepad
+  ansible.builtin.copy:
+    src: fixmousebuttons.sh
+    dest: /usr/sbin/
+    mode: '0744'
+
+- name: Add user '{{ ansible_user }}' to group input, for fusuma
+  user:
+    name: '{{ ansible_user }}'
+    groups: input
+    append: yes
+
+- name: Do not autostart bluetooth
+  ansible.builtin.lineinfile:
+    path: /etc/bluetooth/main.conf
+    regexp: '^AutoEnable=.*'
+    line: AutoEnable=false
