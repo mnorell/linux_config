@@ -1,0 +1,30 @@
+- name: Install developer tools, from package manager
+  become: true
+  ansible.builtin.package:
+    name:
+      - git
+      - openjdk-8-jdk
+      #- openjdk-20-jdk
+      - maven
+      - virtualbox
+      - curl
+      - jq
+    state: present
+
+- name: Install developer tools, from snap
+  become: true
+  community.general.snap:
+    name:
+      - intellij-idea-community
+      - code
+      - node
+      - mqtt-explorer
+    classic: yes
+
+- name: Install developer tools, from npm
+  become: true
+  community.general.npm:
+    name: "@angular/cli"
+    global: true
+    state: present
+

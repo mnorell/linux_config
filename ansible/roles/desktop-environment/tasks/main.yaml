@@ -1,0 +1,68 @@
+- name: Install base packages
+  become: true
+  ansible.builtin.package:
+    name: 
+      - bspwm
+      - x11-xserver-utils
+      - polybar
+      - rofi
+      - suckless-tools
+      - ranger
+      - highlight
+      - fish
+      - tree
+      - xdotool
+      - fonts-jetbrains-mono
+      - numix-gtk-theme
+    state: present
+
+- name: Install hardware support
+  become: true
+  ansible.builtin.package:
+    name: 
+      - powertop
+      - xbacklight
+      - xserver-xorg-input-synaptics
+      - ruby # get gem, for next step.
+      - libinput-tools
+    state: present
+
+- name: Install hardware support, from gem
+  community.general.gem:
+    name: fusuma
+    version: 1.0
+    state: present
+
+# - name: Import APT repo keys
+#   become: true
+#   apt_key:
+#     url: https://repo.vivaldi.com/archive/linux_signing_key.pub
+
+# - name: Add APT repositories
+#   become: true
+#   apt_repository:
+#     repo: deb https://repo.vivaldi.com/archive/deb/ stable main
+#     filename: vivaldi-stable
+
+- name: Install applications
+  become: true
+  ansible.builtin.package:
+    name: 
+      - dconf-cli
+      - gedit
+      - gnome-calculator
+      - gnome-screenshot
+      - gnome-system-monitor
+      - gnome-terminal
+      - gnome-tweaks
+      - thunar
+      - usb-creator-gtk
+      # - chromium-browser
+      # - vivaldi-stable
+    state: present
+
+- ansible.builtin.import_tasks:
+    file: gnome-terminal.yaml
+
+- ansible.builtin.import_tasks:
+    file: gedit.yaml
