@@ -9,6 +9,8 @@
       - virtualbox
       - curl
       - jq
+      - docker.io
+      - docker-compose
     state: present
 
 - name: Install developer tools, from snap
