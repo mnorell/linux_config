@@ -10,15 +10,17 @@
     state: present
 
 - name: Install hardware support, from gem
+  become: true
   community.general.gem:
     name: fusuma
     version: 1.0
     state: present
 
 - name: Fix intel graphics issues
+  become: true
   ansible.builtin.copy:
     src: files/20-intel.conf
-    dest: etc/X11/xorg.conf.d/
+    dest: /etc/X11/xorg.conf.d/
 
 - name: Add script for fixing mouse button behaviour
   ansible.builtin.copy:
@@ -26,18 +28,21 @@
     dest: ~/.config/config.yml
 
 - name: Add fusuma config, for multitouch mousepad
+  become: true
   ansible.builtin.copy:
     src: files/fixmousebuttons.sh
     dest: /usr/sbin/
     mode: '0744'
 
-- name: Add user '{{ ansible_user }}' to group input, for fusuma
+- name: Add user '{{ ansible_env.USER }}' to group 'input', for fusuma
+  become: true
   user:
-    name: '{{ ansible_user }}'
+    name: '{{ ansible_env.USER }}'
     groups: input
     append: yes
 
 - name: Do not autostart bluetooth
+  become: true
   ansible.builtin.lineinfile:
     path: /etc/bluetooth/main.conf
     regexp: '^AutoEnable=.*'

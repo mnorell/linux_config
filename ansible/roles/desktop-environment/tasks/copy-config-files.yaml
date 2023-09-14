@@ -4,9 +4,9 @@
     src: "files/{{ item }}/"
     dest: "~/.config/{{ item }}/"
   with_items:
-    # - bspwm
-    # - fish
-    # - polybar
+    - bspwm
+    - fish
+    - polybar
     - sxhkd
     - Thunar
 

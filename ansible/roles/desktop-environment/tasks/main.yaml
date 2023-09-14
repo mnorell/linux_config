@@ -16,16 +16,16 @@
       - numix-gtk-theme
     state: present
 
-# - name: Import APT repo keys
-#   become: true
-#   apt_key:
-#     url: https://repo.vivaldi.com/archive/linux_signing_key.pub
+- name: Import APT repo keys
+  become: true
+  apt_key:
+    url: https://repo.vivaldi.com/archive/linux_signing_key.pub
 
-# - name: Add APT repositories
-#   become: true
-#   apt_repository:
-#     repo: deb https://repo.vivaldi.com/archive/deb/ stable main
-#     filename: vivaldi-stable
+- name: Add APT repositories
+  become: true
+  apt_repository:
+    repo: deb https://repo.vivaldi.com/archive/deb/ stable main
+    filename: vivaldi-stable
 
 - name: Install applications
   become: true
@@ -40,8 +40,8 @@
       - gnome-tweaks
       - thunar
       - usb-creator-gtk
-      # - chromium-browser
-      # - vivaldi-stable
+      - chromium-browser
+      - vivaldi-stable
     state: present
 
 - ansible.builtin.import_tasks:

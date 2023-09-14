@@ -2,4 +2,5 @@
   connection: local
   roles:
     - role: desktop-environment
-    # - role: dev-tools
+    - role: hardware-support
+    - role: dev-tools
