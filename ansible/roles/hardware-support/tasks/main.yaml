@@ -17,19 +17,17 @@
 
 - name: Fix intel graphics issues
   ansible.builtin.copy:
-    src: 20-intel.conf
+    src: files/20-intel.conf
     dest: etc/X11/xorg.conf.d/
-    # mode: '0644'
 
 - name: Add script for fixing mouse button behaviour
   ansible.builtin.copy:
-    src: fusuma.yml
+    src: files/fusuma.yml
     dest: ~/.config/config.yml
-    # mode: '0644'
 
 - name: Add fusuma config, for multitouch mousepad
   ansible.builtin.copy:
-    src: fixmousebuttons.sh
+    src: files/fixmousebuttons.sh
     dest: /usr/sbin/
     mode: '0744'
 

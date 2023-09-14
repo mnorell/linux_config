@@ -1,0 +1,17 @@
+
+- name: Copy .config files
+  ansible.builtin.copy:
+    src: "files/{{ item }}/"
+    dest: "~/.config/{{ item }}/"
+  with_items:
+    # - bspwm
+    # - fish
+    # - polybar
+    - sxhkd
+    - Thunar
+
+- name: Add iosevka icon font
+  ansible.builtin.copy:
+    src: files/fonts/iosevka_nerd_font.ttf
+    dest: ~/.local/share/fonts/
+    

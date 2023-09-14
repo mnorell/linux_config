@@ -1,5 +1,0 @@
-
-- name: Gedit - configure
-  community.general.dconf:
-    key: /org/gnome/gedit/preferences/editor/background-pattern
-    value: "'grid'"

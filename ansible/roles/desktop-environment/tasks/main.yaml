@@ -45,7 +45,10 @@
     state: present
 
 - ansible.builtin.import_tasks:
-    file: gnome-terminal.yaml
+    file: font-size.yaml
 
 - ansible.builtin.import_tasks:
-    file: gedit.yaml
+    file: copy-config-files.yaml
+
+- ansible.builtin.import_tasks:
+    file: look-n-feel.yaml

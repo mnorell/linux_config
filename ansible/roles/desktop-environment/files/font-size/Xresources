@@ -1,0 +1,3 @@
+# Scaling 200% for all text and UI of firefox and chrome. See: https://ricostacruz.com/til/fractional-scaling-on-xorg-linux
+Xcursor.size: 32
+Xft.dpi: 192

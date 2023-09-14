@@ -1,3 +1,26 @@
+
+# ## Apply theme & icons.
+# #gsettings set org.gnome.desktop.wm.preferences theme 'Numix'
+# #gsettings set org.gnome.desktop.interface gtk-theme 'Numix'
+# #gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+
+# ## Set fonts. (TODO check if fedora, then name font 'JetBrains Mono 10')
+# gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
+
+# # Gnome.
+# # GTK
+# gsettings set org.gnome.mutter attach-modal-dialogs false
+# gsettings set org.gnome.mutter edge-tiling false
+
+# ## Set fonts. (TODO check if fedora, then name font 'JetBrains Mono 10')
+# gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
+
+
+- name: Gedit - configure
+  community.general.dconf:
+    key: /org/gnome/gedit/preferences/editor/background-pattern
+    value: "'grid'"
+
 - name: Gnome-terminal - don't show menubar
   community.general.dconf:
     key: /org/gnome/terminal/legacy/default-show-menubar
