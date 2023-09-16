@@ -1,20 +1,4 @@
 
-# ## Apply theme & icons.
-# #gsettings set org.gnome.desktop.wm.preferences theme 'Numix'
-# #gsettings set org.gnome.desktop.interface gtk-theme 'Numix'
-# #gsettings set org.gnome.desktop.interface icon-theme 'Paper'
-
-
-# - name: Theme
-#   community.general.dconf:
-#     key: "/org/gnome/mutter/{{ item.key }}"
-#     value: "{{ item.value }}"
-#   with_items:
-#     - key: attach-modal-dialogs
-#       value: "false"
-#     - key: edge-tiling
-#       value: "false"
-
 - name: GTK - behaviour
   community.general.dconf:
     key: "/org/gnome/mutter/{{ item.key }}"
