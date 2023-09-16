@@ -9,6 +9,7 @@
       - libinput-tools
     state: present
 
+# TODO this does not work...
 - name: Install hardware support, from gem
   become: true
   community.general.gem:
@@ -22,17 +23,17 @@
     src: files/20-intel.conf
     dest: /etc/X11/xorg.conf.d/
 
-- name: Add script for fixing mouse button behaviour
+- name: Add fusuma config, for multitouch mousepad
   ansible.builtin.copy:
     src: files/fusuma.yml
     dest: ~/.config/config.yml
 
-- name: Add fusuma config, for multitouch mousepad
+- name: Add script for fixing mouse button behaviour
   become: true
   ansible.builtin.copy:
     src: files/fixmousebuttons.sh
     dest: /usr/sbin/
-    mode: '0744'
+    mode: '0755'
 
 - name: Add user '{{ ansible_env.USER }}' to group 'input', for fusuma
   become: true
