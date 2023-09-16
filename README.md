@@ -3,38 +3,26 @@ Nothing fancy, just my "setup a newly installed ubuntu"-scripts.
 
 It installs and configures bspwm with Polybar, fonts, themes and my standard setup of programs.
 
-Currently work in progress, I'm transfering to bspwm from regolith/i3.
+## prereq.
+`sudo apt-get install ansible python3-psutil`
 
+## Run
+First run `sudo ls` to enable "passwordless sudo".
 
-## run.
-There will be some errors. Things change, I update the scripts to reflect my local changes and test them when I perform my next install...
-```
-> Install Ubuntu 22.10
-> ./ubuntu_install_packages
-> ./apply_my_config
-> ./apply_hw_fixes
-```
+`ansible-playbook desktop-env.yaml`
+
 
 ## Manual steps.
-- Install vivaldi, [download here](https://vivaldi.com/sv/download/).
 - Setup custom keyboard layout.
 - deep-sleep-fixes
+- setup git
 
-
-## TODOs
-- Restructure apply config script, make it more like a deploy script that can run multiple times.
-
+## Todo
+- Fedora support
+- Run powertop? Set good powersaving settings...
 - battery warning
-- deep sleep on lid close
 - fingerprint reader
 - lock screen on lid close.
-- encrypt home dir
-
-- select rofi theme in apply script.
-
+- rofi ssh stuff?
+- ranger highlighting not working correct
 - notification deamon, dunst?
-- clipboard manager, https://github.com/cdown/clipmenu ?
-- Apply configs for thunar, vscode, intellij
-
-- install highlighting (sudo apt-get install highlight), make it work with ranger preview, and solarized.
-
