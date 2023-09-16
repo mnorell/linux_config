@@ -10,6 +10,15 @@
     - sxhkd
     - Thunar
 
+- name: Make files executable
+  ansible.builtin.file:
+    path: "{{ item }}"
+    mode: '0744'
+  with_items:
+    - ~/.config/bspwm/bspwmrc
+    - ~/.config/bspwm/refresh_spaces.sh
+    - ~/.config/sxhkd/rofi-system-menu.sh
+
 - name: Add iosevka icon font
   ansible.builtin.copy:
     src: files/fonts/iosevka_nerd_font.ttf

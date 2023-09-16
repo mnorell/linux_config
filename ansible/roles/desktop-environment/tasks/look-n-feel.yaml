@@ -4,22 +4,67 @@
 # #gsettings set org.gnome.desktop.interface gtk-theme 'Numix'
 # #gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 
-# ## Set fonts. (TODO check if fedora, then name font 'JetBrains Mono 10')
-# gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
 
-# # Gnome.
-# # GTK
-# gsettings set org.gnome.mutter attach-modal-dialogs false
-# gsettings set org.gnome.mutter edge-tiling false
+# - name: Theme
+#   community.general.dconf:
+#     key: "/org/gnome/mutter/{{ item.key }}"
+#     value: "{{ item.value }}"
+#   with_items:
+#     - key: attach-modal-dialogs
+#       value: "false"
+#     - key: edge-tiling
+#       value: "false"
 
-# ## Set fonts. (TODO check if fedora, then name font 'JetBrains Mono 10')
-# gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
+- name: GTK - behaviour
+  community.general.dconf:
+    key: "/org/gnome/mutter/{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - key: attach-modal-dialogs
+      value: "false"
+    - key: edge-tiling
+      value: "false"
 
+# TODO check if fedora, then name font 'JetBrains Mono 10'
+- name: Default mono font
+  community.general.dconf:
+    key: /org/gnome/desktop/interface/monospace-font-name
+    value: "'JetBrains Mono Regular 10'"
+
+- name: Keyboard layout indicator - remove
+  community.general.dconf:
+    key: /desktop/ibus/panel/show-icon-on-systray
+    value: "false"
+
+- name: Thunar - configure
+  xfconf:
+    channel: thunar
+    property: "{{ item.key }}"
+    value_type: "{{ item.value_type }}"
+    value: "{{ item.value }}"
+  with_items:
+    - key: /last-view
+      value_type: string
+      value: ThunarCompactView
+    - key: /last-menubar-visible
+      value_type: bool
+      value: false
 
 - name: Gedit - configure
   community.general.dconf:
-    key: /org/gnome/gedit/preferences/editor/background-pattern
-    value: "'grid'"
+    key: "/org/gnome/gedit/preferences/editor/{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - key: background-pattern
+      value: "'grid'"
+    - key: ensure-trailing-newline
+      value: "true"
+    - key: insert-spaces
+      value: "true"
+    - key: scheme
+      value: "'solarized-light'"
+    - key: tabs-size
+      value: "4"
 
 - name: Gnome-terminal - don't show menubar
   community.general.dconf:
