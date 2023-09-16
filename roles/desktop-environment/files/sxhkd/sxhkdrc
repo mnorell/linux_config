@@ -175,7 +175,7 @@ shift + XF86MonBrightnessDown
 
 # Browser
 super + z
-	google-chrome
+	vivaldi
 # Filemnagers
 super + x
 	thunar
