@@ -7,9 +7,9 @@ It installs and configures bspwm with Polybar, fonts, themes and my standard set
 `sudo apt-get install ansible python3-psutil`
 
 ## Run
-First run `sudo ls` to enable "passwordless sudo".
+`sudo echo "" && ansible-playbook desktop-env.yaml`
 
-`ansible-playbook desktop-env.yaml`
+(sudo echo for "passwordless sudo")
 
 
 ## Manual steps.
