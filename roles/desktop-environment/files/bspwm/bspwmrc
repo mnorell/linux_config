@@ -28,7 +28,7 @@ wmname LG3D
 
 # Startup apps.
 polybar top &
-fixmousebuttons.sh
+/usr/sbin/fixmousebuttons.sh
 /usr/bin/unclutter -b
 /usr/bin/nm-applet &
 xsetroot -cursor_name left_ptr &

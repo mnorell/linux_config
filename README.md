@@ -19,6 +19,7 @@ First run `sudo ls` to enable "passwordless sudo".
 
 ## Todo
 - Fedora support
+- Auto updates?
 - Run powertop? Set good powersaving settings...
 - battery warning
 - fingerprint reader

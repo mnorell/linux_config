@@ -1,3 +1,7 @@
+- name: Print all available facts
+  ansible.builtin.debug:
+    var: ansible_facts.lsb
+
 - name: Install base packages
   become: true
   ansible.builtin.package:
@@ -16,12 +20,12 @@
       - numix-gtk-theme
     state: present
 
-- name: Import APT repo keys
+- name: Import Vivaldi APT repo keys
   become: true
   apt_key:
     url: https://repo.vivaldi.com/archive/linux_signing_key.pub
 
-- name: Add APT repositories
+- name: Add Vivaldi APT repositories
   become: true
   apt_repository:
     repo: deb https://repo.vivaldi.com/archive/deb/ stable main
