@@ -33,9 +33,11 @@ polybar top &
 /usr/bin/nm-applet &
 xsetroot -cursor_name left_ptr &
 
-
 # Scale down gui (this is too laggy...)
 #( sleep 10 ; xrandr --output $(xrandr --query | grep " connected" | awk '{print $1}') --scale '1.14x1.14' ) &
 
 # bgcolor
 xsetroot -solid "#888888"
+
+# Somehow the super-space shortcut only works after a reload. So let's reload.
+pkill -USR1 -x sxhkd
