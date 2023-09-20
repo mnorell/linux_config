@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # add this to desktop environment startup apps 
-sleep 2
+sleep 6
 
 synclient RightButtonAreaLeft=0
 synclient RightButtonAreaTop=0
@@ -23,6 +23,7 @@ synclient HorizScrollDelta=-70
 
 #/home/markus/bin/touchegg &
 #touchegg &
+killall fusuma
 fusuma -d
 
 ## Fusuma installed:

@@ -2,31 +2,17 @@ swipe:
   3: 
     left: 
       command: 'xdotool key alt+Right'
+      interval: 2
     right: 
       command: 'xdotool key alt+Left'
-#    up: 
-#      command: 'xdotool key ctrl+minus'
-#    down: 
-#      command: 'xdotool key ctrl+plus'
-#  4:
-#    left: 
-#      command: 'xdotool key ctrl+alt+Right'
-#    right: 
-#      command: 'xdotool key ctrl+alt+Left'
-#    up: 
-#      command: 'xdotool key alt+F10'
-#    down: 
-#      command: 'xdotool key ctrl+alt+Down'
-#pinch:
-#  in:
-#    command: 'xdotool key ctrl+plus'
-#  out:
-#    command: 'xdotool key ctrl+minus'
+      interval: 2
+    up: 
+      command: 'bspc desktop -f prev.local.occupied'
+    down: 
+      command: 'bspc desktop -f next.local.occupied'
 
-#threshold:
-#  swipe: 0.4
-#  pinch: 0.3
+threshold:
+  swipe: 0.3
 
-#interval:
-#  swipe: 0.2
-#  pinch: 0.2
+interval: 
+  swipe: 0.4

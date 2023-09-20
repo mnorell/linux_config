@@ -26,7 +26,7 @@
 - name: Add fusuma config, for multitouch mousepad
   ansible.builtin.copy:
     src: files/fusuma.yml
-    dest: ~/.config/config.yml
+    dest: ~/.config/fusuma/config.yml
 
 - name: Add script for fixing mouse button behaviour
   become: true
