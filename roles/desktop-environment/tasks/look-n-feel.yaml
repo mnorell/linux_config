@@ -30,6 +30,9 @@
     - key: /last-view
       value_type: string
       value: ThunarCompactView
+    - key: /last-location-bar
+      value_type: string
+      value: ThunarLocationButtons
     - key: /last-menubar-visible
       value_type: bool
       value: false
