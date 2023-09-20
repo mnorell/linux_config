@@ -7,6 +7,7 @@
       - openjdk-20-jdk
       - maven
       - virtualbox
+      - vagrant
       - curl
       - jq
     state: present

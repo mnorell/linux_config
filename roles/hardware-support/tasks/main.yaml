@@ -9,6 +9,12 @@
       - libinput-tools
     state: present
 
+#Laptop mode tools? powerstat?sudo apt install linux-tools-generic
+# sudo apt install linux-tools-common
+# sudo apt install laptop-mode-tools
+# sudo apt install powerstat
+
+
 - name: Install hardware support, from gem
   become: true
   community.general.gem:
