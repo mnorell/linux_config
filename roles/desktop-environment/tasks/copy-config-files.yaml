@@ -5,7 +5,6 @@
     dest: "~/.config/{{ item }}/"
   with_items:
     - bspwm
-    - fusuma
     - fish
     - polybar
     - sxhkd

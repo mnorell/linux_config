@@ -9,12 +9,10 @@
       - libinput-tools
     state: present
 
-# TODO this does not work...
 - name: Install hardware support, from gem
   become: true
   community.general.gem:
     name: fusuma
-    version: 1.0
     state: present
 
 - name: Fix intel graphics issues
@@ -23,17 +21,16 @@
     src: files/20-intel.conf
     dest: /etc/X11/xorg.conf.d/
 
-- name: Add fusuma config, for multitouch mousepad
+- name: Configure synaptics touchpad driver
+  become: true
+  ansible.builtin.copy:
+    src: files/30-synaptics.conf
+    dest: /etc/X11/xorg.conf.d/
+
+- name: Add fusuma config, for multitouch touchpad gestures
   ansible.builtin.copy:
     src: files/fusuma.yml
     dest: ~/.config/fusuma/config.yml
-
-- name: Add script for fixing mouse button behaviour
-  become: true
-  ansible.builtin.copy:
-    src: files/fixmousebuttons.sh
-    dest: /usr/sbin/
-    mode: '0755'
 
 - name: Add user '{{ ansible_env.USER }}' to group 'input', for fusuma
   become: true
