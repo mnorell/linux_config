@@ -30,7 +30,7 @@
 - name: Configure synaptics touchpad driver
   become: true
   ansible.builtin.copy:
-    src: files/30-synaptics.conf
+    src: files/90-synaptics.conf
     dest: /etc/X11/xorg.conf.d/
 
 - name: Add fusuma config, for multitouch touchpad gestures
