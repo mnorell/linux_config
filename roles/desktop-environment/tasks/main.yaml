@@ -7,13 +7,19 @@
       - polybar
       - rofi
       - suckless-tools
-      - ranger
-      - highlight
-      - fish
-      - tree
       - xdotool
       - fonts-jetbrains-mono
-      - numix-gtk-theme
+      - numix-gtk-theme # do i use this?
+    state: present
+
+- name: Install cli tools
+  become: true
+  ansible.builtin.package:
+    name: 
+      - fish
+      - ranger
+      - bat
+      - tree
     state: present
 
 - name: Import Vivaldi APT repo keys

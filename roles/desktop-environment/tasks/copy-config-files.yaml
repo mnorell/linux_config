@@ -4,6 +4,7 @@
     src: "files/{{ item }}/"
     dest: "~/.config/{{ item }}/"
   with_items:
+    - bat
     - bspwm
     - fish
     - polybar
