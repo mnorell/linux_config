@@ -4,7 +4,9 @@ Nothing fancy, just my "setup a newly installed ubuntu"-scripts.
 It installs and configures bspwm with Polybar, fonts, themes and my standard setup of programs.
 
 ## prereq.
-`sudo apt-get install ansible python3-psutil`
+`sudo apt install ansible python3-psutil`
+or
+`sudo dnf install ansible python3-psutil`
 
 ## Run
 `sudo echo "" && ansible-playbook desktop-env.yaml`

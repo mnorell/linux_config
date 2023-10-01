@@ -40,3 +40,5 @@ fusuma -d &
 # Somehow the super-space shortcut only works after a reload. So let's reload.
 sleep 1
 pkill -USR1 -x sxhkd &
+
+/usr/bin/setxkbmap -layout gb -variant shift-for-numbers

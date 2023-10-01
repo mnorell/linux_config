@@ -1,0 +1,25 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "bento/fedora-latest"
+
+    config.vm.synced_folder "../", "/home/vagrant/linux_config"
+
+    config.vm.provider "virtualbox" do |vb|
+        vb.name = "Fedora vagrant"
+        
+        vb.gui = true
+
+        vb.cpus = 4
+        vb.memory = "8192"
+
+        # Graphic memory
+        vb.customize ["modifyvm", :id, "--vram", "128"]
+    end
+
+    config.vm.provision "shell", inline: <<-SHELL
+        dnf -y upgrade
+        dnf -y group install "Fedora Workstation"
+        systemctl set-default graphical.target
+        # systemctl enable gdm --now
+    SHELL
+
+end

@@ -3,14 +3,34 @@
   ansible.builtin.package:
     name: 
       - bspwm
-      - x11-xserver-utils
       - polybar
       - rofi
-      - suckless-tools
       - xdotool
-      - fonts-jetbrains-mono
-      - numix-gtk-theme # do i use this?
+      - dunst
+      #- numix-gtk-theme # do i use this?
     state: present
+
+- name: Install base packages (ubuntu)
+  become: true
+  ansible.builtin.package:
+    name: 
+      - x11-xserver-utils # fedora xsetroot
+      - suckless-tools # fedora? wmname
+      - fonts-jetbrains-mono # fedora jetbrains-mono-fonts
+    state: present
+  when:
+    - ansible_facts['distribution'] == "Ubuntu"
+
+- name: Install base packages (fedora)
+  become: true
+  ansible.builtin.package:
+    name: 
+      - xsetroot
+      - wmname
+      - jetbrains-mono-fonts
+    state: present
+  when:
+    - ansible_facts['distribution'] == "Fedora"
 
 - name: Install cli tools
   become: true
@@ -26,18 +46,21 @@
   become: true
   apt_key:
     url: https://repo.vivaldi.com/archive/linux_signing_key.pub
+  when:
+    - ansible_facts['distribution'] == "Ubuntu"
 
 - name: Add Vivaldi APT repositories
   become: true
   apt_repository:
     repo: deb https://repo.vivaldi.com/archive/deb/ stable main
     filename: vivaldi-stable
+  when:
+    - ansible_facts['distribution'] == "Ubuntu"
 
 - name: Install applications
   become: true
   ansible.builtin.package:
     name: 
-      - dconf-cli
       - gedit
       - gnome-calculator
       - gnome-screenshot
@@ -45,10 +68,28 @@
       - gnome-terminal
       - gnome-tweaks
       - thunar
-      - usb-creator-gtk
-      - chromium-browser
-      - vivaldi-stable
     state: present
+
+- name: Install applications (ubuntu)
+  become: true
+  ansible.builtin.package:
+    name: 
+      - chromium-browser
+      - dconf-cli
+      - usb-creator-gtk
+      - vivaldi-stable 
+    state: present
+  when:
+    - ansible_facts['distribution'] == "Ubuntu"
+
+- name: Install applications (fedora)
+  become: true
+  ansible.builtin.package:
+    name: 
+      - chromium
+    state: present
+  when:
+    - ansible_facts['distribution'] == "Fedora"
 
 - ansible.builtin.import_tasks:
     file: font-size.yaml
