@@ -42,7 +42,7 @@ sudo update-grub
 
 
 
-################## THEN
+################## THEN wait for support in ubuntu 23.10
 
 sudo mkdir /etc/systemd/sleep.conf.d/
 
