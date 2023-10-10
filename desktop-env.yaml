@@ -4,3 +4,5 @@
     - role: desktop-environment
     - role: hardware-support
     - role: dev-tools
+    - role: custom-keyboard-layout
+    

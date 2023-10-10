@@ -1,0 +1,48 @@
+// Keyboard layouts for Great Britain.
+
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    // The basic UK layout, also known as the IBM 166 layout,
+    // but with the useless brokenbar pushed two levels up.
+
+    include "latin"
+
+    name[Group1]="English (UK)";
+
+    key <TLDE>	{ [     grave,    notsign,          bar,          bar ]	};
+    key <AE02>	{ [         2,   quotedbl,  twosuperior,    oneeighth ]	};
+    key <AE03>	{ [         3,   sterling, threesuperior,    sterling ]	};
+    key <AE04>	{ [         4,     dollar,     EuroSign,   onequarter ]	};
+
+    key <AC11>	{ [apostrophe,         at, dead_circumflex, dead_caron]	};
+    key <BKSL>	{ [numbersign, asciitilde,   dead_grave,   dead_breve ]	};
+
+    key <LSGT>	{ [ backslash,        bar,          bar,    brokenbar ]	};
+
+    include "level3(ralt_switch)"
+};
+
+partial alphanumeric_keys
+xkb_symbols "shift-for-numbers" {
+
+  include "gb"
+  name[Group1]= "Shift for numbers in numbers row, defaults to symbols";
+
+    key <AE01> { [   exclam,      1 ] };
+    key <AE02> { [   quotedbl,    2 ] };
+    key <AE03> { [   sterling,    3 ] };
+    key <AE04> { [   dollar,      4 ] };
+    key <AE05> { [   percent,     5 ] };
+    key <AE06> { [   asciicircum, 6 ] };
+    key <AE07> { [   ampersand,   7 ] };
+    key <AE08> { [   asterisk,    8 ] };
+    key <AE09> { [   parenleft,   9 ] };
+    key <AE10> { [   parenright,  0 ] };
+
+    key <AC10> { [ NoSymbol, NoSymbol, odiaeresis, Odiaeresis ] };
+    key <AC11> { [ NoSymbol, NoSymbol, adiaeresis, Adiaeresis ] };
+    key <AD11> { [ NoSymbol, NoSymbol, aring, Aring ] };
+    
+    include "level3(ralt_switch)"
+};

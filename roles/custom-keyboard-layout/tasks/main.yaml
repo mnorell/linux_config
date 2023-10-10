@@ -1,0 +1,10 @@
+
+- name: Add custom keyboard layouts
+  become: true
+  ansible.builtin.copy:
+    src: "files/{{ item }}"
+    dest: "/usr/share/X11/xkb/symbols/{{ item }}"
+  with_items: 
+    - gb
+    - se
+    - us 
