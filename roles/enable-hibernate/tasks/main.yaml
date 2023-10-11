@@ -1,0 +1,9 @@
+
+# Support will be added in ubuntu 23.10.
+
+# Fedora...
+# This unit is actually part of the systemd-udev package, not systemd, so make sure you have systemd-udev installed.
+# check:  ls /usr/lib/systemd/system | grep suspend
+
+# create dir first.
+# /etc/systemd/sleep.conf.d/hibernate.conf

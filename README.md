@@ -17,7 +17,7 @@ or
 
 
 ## Manual steps.
-- deep-sleep-fixes
+- deep-sleep-fixes / enable hibernate
 - setup git
 
 ## Todo

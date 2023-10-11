@@ -39,10 +39,3 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=deep resume=UUID=0fa8
 
 Then:
 sudo update-grub
-
-
-
-################## THEN wait for support in ubuntu 23.10
-
-sudo mkdir /etc/systemd/sleep.conf.d/
-
