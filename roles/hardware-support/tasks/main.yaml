@@ -4,6 +4,7 @@
   ansible.builtin.package:
     name: 
       - powertop
+      - laptop-mode-tools
       - xserver-xorg-input-synaptics
       - ruby # get gem, for next step.
       - libinput-tools
