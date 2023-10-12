@@ -5,4 +5,5 @@
     - role: hardware-support
     - role: dev-tools
     - role: custom-keyboard-layout
+    - role: unattended-upgrades
     

@@ -1,0 +1,31 @@
+Unattended-Upgrade::Allowed-Origins {
+	"${distro_id}:${distro_codename}";
+	"${distro_id}:${distro_codename}-security";
+	"${distro_id}:${distro_codename}-updates";
+};
+
+Unattended-Upgrade::Mail "markus@localhost";
+
+// Set this value to one of:
+//    "always", "only-on-error" or "on-change"
+// If this is not set, then any legacy MailOnlyOnError (boolean) value
+// is used to chose between "only-on-error" and "on-change"
+//Unattended-Upgrade::MailReport "on-change";
+
+// Remove unused automatically installed kernel-related packages
+// (kernel images, kernel headers and kernel version locked tools).
+//Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
+
+Unattended-Upgrade::Remove-Unused-Dependencies "true";
+
+// Enable logging to syslog. Default is False
+Unattended-Upgrade::SyslogEnable "true";
+
+// Download and install upgrades only on AC power
+// (i.e. skip or gracefully stop updates on battery)
+// Unattended-Upgrade::OnlyOnACPower "true";
+
+// Download and install upgrades only on non-metered connection
+// (i.e. skip or gracefully stop updates on a metered connection)
+Unattended-Upgrade::Skip-Updates-On-Metered-Connections "true";
+

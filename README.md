@@ -23,5 +23,5 @@ or
 ## Todo
 - Auto updates?
 - lock screen on lid close.
-- Run powertop? Or laptop-mode? Set good powersaving settings...
+- Run powertop? Or laptop-mode-tools? Set good powersaving settings...
 - fingerprint reader

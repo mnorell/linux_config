@@ -1,6 +1,10 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+start() {
+    pgrep -x $1 > /dev/null || $1 $2 $3 $4 &
+}
+
+start sxhkd
 
 # Set spaces names
 ~/.config/bspwm/refresh_spaces.sh
@@ -30,15 +34,15 @@ wmname LG3D
 # bgcolor and cursor
 xsetroot -solid "#888888" &
 xsetroot -cursor_name left_ptr &
+#unclutter -b
 
 # Startup apps.
-polybar top &
-/usr/bin/unclutter -b &
-/usr/bin/nm-applet &
-fusuma -d &
+start polybar top
+start nm-applet
+start fusuma -d
 
 # Somehow the super-space shortcut only works after a reload. So let's reload.
 sleep 1
 pkill -USR1 -x sxhkd &
 
-/usr/bin/setxkbmap -layout gb -variant shift-for-numbers
+setxkbmap -layout gb -variant shift-for-numbers
