@@ -4,7 +4,7 @@ Unattended-Upgrade::Allowed-Origins {
 	"${distro_id}:${distro_codename}-updates";
 };
 
-Unattended-Upgrade::Mail "markus@localhost";
+Unattended-Upgrade::Mail "{{ ansible_env.USER }}@localhost";
 
 // Set this value to one of:
 //    "always", "only-on-error" or "on-change"
@@ -28,4 +28,3 @@ Unattended-Upgrade::SyslogEnable "true";
 // Download and install upgrades only on non-metered connection
 // (i.e. skip or gracefully stop updates on a metered connection)
 Unattended-Upgrade::Skip-Updates-On-Metered-Connections "true";
-
