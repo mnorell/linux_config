@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + space
-    rofi -show drun -font "JetBrains Mono NF 18" -width 20 -lines 10
+    rofi -show drun -font "JetBrains Mono NF 24" -width 20 -lines 10 -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
