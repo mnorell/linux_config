@@ -20,7 +20,7 @@ or
 - deep-sleep-fixes / enable hibernate
 - setup git
 - set `GRUB_GFXMODE=1920x1440` in `/etc/default/grub`, and run `sudo update-grub`
-- sudo dpkg-reconfigure console-setup:
+- `sudo dpkg-reconfigure console-setup`:
     Set: `UTF-8`, `Combined: Lat. Slav. Greek`, `Terminus`, max size.
 
 

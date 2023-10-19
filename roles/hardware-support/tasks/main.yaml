@@ -34,6 +34,11 @@
     src: files/90-synaptics.conf
     dest: /etc/X11/xorg.conf.d/
 
+- name: Create fusuma config dir, for multitouch touchpad gestures
+  ansible.builtin.file:
+    path: ~/.config/fusuma/
+    state: directory
+
 - name: Add fusuma config, for multitouch touchpad gestures
   ansible.builtin.copy:
     src: files/fusuma.yml

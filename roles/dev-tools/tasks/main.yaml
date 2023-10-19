@@ -36,29 +36,31 @@
 
 - name: Add docker apt repositories
   become: true
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: deb https://download.docker.com/linux/ubuntu {{ ansible_facts.lsb.codename }} stable
     filename: docker
 
-- name: Install docker
-  become: true
-  ansible.builtin.package:
-    name:
-      - docker-ce
-      - docker-ce-cli
-      - docker-buildx-plugin
-      - docker-compose-plugin
-    state: present
+# Docker not available for mantic yet...
 
-- name: Configure docker
-  become: true
-  ansible.builtin.copy:
-    content: '{ "features": { "buildkit": true } }'
-    dest: /etc/docker/daemon.json
+# - name: Install docker
+#   become: true
+#   ansible.builtin.package:
+#     name:
+#       - docker-ce
+#       - docker-ce-cli
+#       - docker-buildx-plugin
+#       - docker-compose-plugin
+#     state: present
 
-- name: Add user '{{ ansible_env.USER }}' to group 'docker'
-  become: true
-  user:
-    name: '{{ ansible_env.USER }}'
-    groups: docker
-    append: yes
+# - name: Configure docker
+#   become: true
+#   ansible.builtin.copy:
+#     content: '{ "features": { "buildkit": true } }'
+#     dest: /etc/docker/daemon.json
+
+# - name: Add user '{{ ansible_env.USER }}' to group 'docker'
+#   become: true
+#   user:
+#     name: '{{ ansible_env.USER }}'
+#     groups: docker
+#     append: yes
