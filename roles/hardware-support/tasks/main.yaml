@@ -21,6 +21,7 @@
   community.general.gem:
     name: fusuma
     state: present
+    user_install: false
 
 - name: Fix intel graphics issues
   become: true
