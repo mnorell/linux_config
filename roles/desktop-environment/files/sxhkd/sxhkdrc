@@ -93,8 +93,8 @@ super + Tab
 #	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{1-9,0,i,o,p}
+	bspc {desktop -f,node -d} '^{1-9,10,11,12,13}'
 
 
 #
@@ -176,7 +176,7 @@ shift + XF86MonBrightnessDown
 # Browser
 super + z
 	vivaldi
-# Filemnagers
+# Filemanager
 super + x
 	thunar
 

@@ -22,40 +22,49 @@ function fixDesktops() {
 
     # Relocate desktops
     if [ $monitor_count = "1" ]; then
-        bspc desktop "%${desktops[0]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[1]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[2]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[3]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[4]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[5]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[6]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[7]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[8]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[9]}" --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[0]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[1]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[2]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[3]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[4]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[5]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[6]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[7]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[8]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[9]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[10]}" --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[11]}" --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[12]}" --to-monitor ${monitors[0]}
 
     elif [ $monitor_count = "2" ]; then
-        bspc desktop "%${desktops[0]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[1]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[2]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[3]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[4]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[5]}" --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[6]}" --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[7]}" --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[8]}" --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[9]}" --to-monitor ${monitors[1]}
+        bspc desktop "%${desktops[0]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[1]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[2]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[3]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[4]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[5]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[6]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[7]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[8]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[9]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[10]}" --to-monitor ${monitors[1]}
+        bspc desktop "%${desktops[11]}" --to-monitor ${monitors[1]}
+        bspc desktop "%${desktops[12]}" --to-monitor ${monitors[1]}
 
     elif [ $monitor_count = "3" ]; then
-        bspc desktop "%${desktops[0]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[1]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[2]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[3]}" --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[4]}" --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[5]}" --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[6]}" --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[7]}" --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[8]}" --to-monitor ${monitors[2]}
-        bspc desktop "%${desktops[9]}" --to-monitor ${monitors[2]}
+        bspc desktop "%${desktops[0]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[1]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[2]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[3]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[4]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[5]}"  --to-monitor ${monitors[1]}
+        bspc desktop "%${desktops[6]}"  --to-monitor ${monitors[1]}
+        bspc desktop "%${desktops[7]}"  --to-monitor ${monitors[1]}
+        bspc desktop "%${desktops[8]}"  --to-monitor ${monitors[1]}
+        bspc desktop "%${desktops[9]}"  --to-monitor ${monitors[1]}
+        bspc desktop "%${desktops[10]}" --to-monitor ${monitors[2]}
+        bspc desktop "%${desktops[11]}" --to-monitor ${monitors[2]}
+        bspc desktop "%${desktops[12]}" --to-monitor ${monitors[2]}
 
     else
         echo "ERROR"
@@ -87,7 +96,10 @@ function fixDesktops() {
         "%07. $(cat ~/.config/bspwm/spaces/07)" \
         "%08. $(cat ~/.config/bspwm/spaces/08)" \
         "%09. $(cat ~/.config/bspwm/spaces/09)" \
-        "%10. $(cat ~/.config/bspwm/spaces/10)" 
+        "%10. $(cat ~/.config/bspwm/spaces/10)" \
+        "%i. $(cat ~/.config/bspwm/spaces/i)" \
+        "%o. $(cat ~/.config/bspwm/spaces/o)" \
+        "%p. $(cat ~/.config/bspwm/spaces/p)" 
 }
 
 function fixPolybar() {
