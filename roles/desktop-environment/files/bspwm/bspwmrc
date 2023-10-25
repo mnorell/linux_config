@@ -6,9 +6,6 @@ start() {
 
 start sxhkd
 
-# Set spaces names
-~/.config/bspwm/refresh_spaces.sh
-
 # Configure bspwm
 bspc config border_width  8
 bspc config window_gap   30
@@ -26,6 +23,8 @@ bspc config pointer_action2 move
 bspc config normal_border_color  \#aaaaaa
 bspc config focused_border_color \#fba922
 
+bspc config focus_follows_pointer true
+
 bspc rule -a gnome-calculator state=floating
 
 # Fix for blank java apps.
@@ -36,8 +35,16 @@ xsetroot -solid "#888888" &
 xsetroot -cursor_name left_ptr &
 #unclutter -b
 
+# Set spaces names
+bash ~/.config/bspwm/refresh_spaces.sh
+
+# Polybar
+killall polybar
+polybar bar1 &
+polybar bar2 &
+polybar bar3 &
+
 # Startup apps.
-start polybar top
 start nm-applet
 start fusuma -d
 

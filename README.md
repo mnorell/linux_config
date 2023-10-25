@@ -29,3 +29,11 @@ or
 - lock screen on lid close.
 - Run powertop? Or laptop-mode-tools? Set good powersaving settings...
 - fingerprint reader
+
+
+## Setting up a test vm
+Install ubuntu in virtualbox.
+`sudo apt install build-essential dkms`
+Insert guest additions cd, and install it.
+`sudo adduser $USER vboxsf`
+Add shared folders

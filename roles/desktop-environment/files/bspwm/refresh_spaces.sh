@@ -1,62 +1,51 @@
 #/bin/bash
 
-# Single monitor
+monitors=( $(bspc query -M --names | sort) )
+#monitors=( $(xrandr -q | grep " connected" | awk '{print $1}' | sort) )
+monitor_count=${#monitors[@]}
 
-bspc monitor -d \
-"1. $(cat ~/.config/bspwm/spaces/1)" \
-"2. $(cat ~/.config/bspwm/spaces/2)" \
-"3. $(cat ~/.config/bspwm/spaces/3)" \
-"4. $(cat ~/.config/bspwm/spaces/4)" \
-"5. $(cat ~/.config/bspwm/spaces/5)" \
-"6. $(cat ~/.config/bspwm/spaces/6)" \
-"7. $(cat ~/.config/bspwm/spaces/7)" \
-"8. $(cat ~/.config/bspwm/spaces/8)" \
-"9. $(cat ~/.config/bspwm/spaces/9)" \
-"10. $(cat ~/.config/bspwm/spaces/10)" 
+if [ $monitor_count = "1" ]; then
+    bspc monitor -d \
+        "01. $(cat ~/.config/bspwm/spaces/01)" \
+        "02. $(cat ~/.config/bspwm/spaces/02)" \
+        "03. $(cat ~/.config/bspwm/spaces/03)" \
+        "04. $(cat ~/.config/bspwm/spaces/04)" \
+        "05. $(cat ~/.config/bspwm/spaces/05)" \
+        "06. $(cat ~/.config/bspwm/spaces/06)" \
+        "07. $(cat ~/.config/bspwm/spaces/07)" \
+        "08. $(cat ~/.config/bspwm/spaces/08)" \
+        "09. $(cat ~/.config/bspwm/spaces/09)" \
+        "10. $(cat ~/.config/bspwm/spaces/10)" 
 
+elif [ $monitor_count = "2" ]; then
+    bspc monitor ${monitors[0]} -d \
+        "01. $(cat ~/.config/bspwm/spaces/01)" \
+        "02. $(cat ~/.config/bspwm/spaces/02)" \
+        "03. $(cat ~/.config/bspwm/spaces/03)" \
+        "04. $(cat ~/.config/bspwm/spaces/04)" \
+        "05. $(cat ~/.config/bspwm/spaces/05)" 
+    bspc monitor ${monitors[1]} -d \
+        "06. $(cat ~/.config/bspwm/spaces/06)" \
+        "07. $(cat ~/.config/bspwm/spaces/07)" \
+        "08. $(cat ~/.config/bspwm/spaces/08)" \
+        "09. $(cat ~/.config/bspwm/spaces/09)" \
+        "10. $(cat ~/.config/bspwm/spaces/10)" 
 
-# Dual monitor, in vm
-bspc monitor Virtual1 -d \
-"1. $(cat ~/.config/bspwm/spaces/1)" \
-"2. $(cat ~/.config/bspwm/spaces/2)" \
-"3. $(cat ~/.config/bspwm/spaces/3)" \
-"4. $(cat ~/.config/bspwm/spaces/4)" \
-"5. $(cat ~/.config/bspwm/spaces/5)" 
+elif [ $monitor_count = "3" ]; then
+    bspc monitor ${monitors[0]} -d \
+        "01. $(cat ~/.config/bspwm/spaces/01)" \
+        "02. $(cat ~/.config/bspwm/spaces/02)" \
+        "03. $(cat ~/.config/bspwm/spaces/03)" \
+        "04. $(cat ~/.config/bspwm/spaces/04)" 
+    bspc monitor ${monitors[1]} -d \
+        "05. $(cat ~/.config/bspwm/spaces/05)" \
+        "06. $(cat ~/.config/bspwm/spaces/06)" \
+        "07. $(cat ~/.config/bspwm/spaces/07)" \
+        "08. $(cat ~/.config/bspwm/spaces/08)" 
+    bspc monitor ${monitors[2]} -d \
+        "09. $(cat ~/.config/bspwm/spaces/09)" \
+        "10. $(cat ~/.config/bspwm/spaces/10)" 
 
-bspc monitor Virtual2 -d \
-"6. $(cat ~/.config/bspwm/spaces/6)" \
-"7. $(cat ~/.config/bspwm/spaces/7)" \
-"8. $(cat ~/.config/bspwm/spaces/8)" \
-"9. $(cat ~/.config/bspwm/spaces/9)" \
-"10. $(cat ~/.config/bspwm/spaces/10)" 
-
-#bspc monitor Virtual1 -d \
-#"1. $(cat ~/.config/bspwm/spaces/1)" \
-#"3. $(cat ~/.config/bspwm/spaces/3)" \
-#"5. $(cat ~/.config/bspwm/spaces/5)" \
-#"7. $(cat ~/.config/bspwm/spaces/7)" \
-#"9. $(cat ~/.config/bspwm/spaces/9)" \
-
-#bspc monitor Virtual2 -d \
-#"2. $(cat ~/.config/bspwm/spaces/2)" \
-#"4. $(cat ~/.config/bspwm/spaces/4)" \
-#"6. $(cat ~/.config/bspwm/spaces/6)" \
-#"8. $(cat ~/.config/bspwm/spaces/8)" \
-#"10. $(cat ~/.config/bspwm/spaces/10)" \
-
-
-#bspc monitor Virtual1 -d \
-#"1. $(cat ~/.config/bspwm/spaces/1)" \
-#"3. $(cat ~/.config/bspwm/spaces/3)" \
-#"5. $(cat ~/.config/bspwm/spaces/5)" \
-#"7. $(cat ~/.config/bspwm/spaces/7)" \
-#"9. $(cat ~/.config/bspwm/spaces/9)" \
-
-#bspc monitor Virtual2 -d \
-#"2. $(cat ~/.config/bspwm/spaces/2)" \
-#"4. $(cat ~/.config/bspwm/spaces/4)" \
-#"6. $(cat ~/.config/bspwm/spaces/6)" \
-#"8. $(cat ~/.config/bspwm/spaces/8)" \
-#"10. $(cat ~/.config/bspwm/spaces/10)" \
-
-
+else
+    echo "ERROR"
+fi
