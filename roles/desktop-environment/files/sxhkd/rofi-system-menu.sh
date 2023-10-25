@@ -23,7 +23,7 @@ case $selection in
     $reload)
         pkill -USR1 -x sxhkd ;;
     $restartpan)
-        pkill polybar && polybar bar1 && polybar bar2 && polybar bar3 ;;
+        pkill polybar; polybar bar1; polybar bar2; polybar bar3 ;;
     $quit)
         [[ $(confirm $quit) = 1 ]] && (bspc quit) ;;
     $reboot)
