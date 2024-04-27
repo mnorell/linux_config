@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<xkbConfigRegistry version="1.1">  
+  <layoutList>
+    <layout>
+      <configItem>
+        <name>se</name>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>gb</name>
+            <description>Swedish (GB, with Swedish letters)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>us</name>
+            <description>Swedish (US, with Swedish letters)</description>
+          </configItem>
+        </variant>
+      </variantList>
+    </layout>
+    <layout>
+      <configItem>
+        <name>gb</name>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>shift-for-numbers</name>
+            <description>GB, shift for numbers</description>
+          </configItem>
+        </variant>
+      </variantList>
+    </layout>
+    <layout>
+      <configItem>
+        <name>us</name>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>shift-for-numbers</name>
+            <description>US, shift for numbers</description>
+          </configItem>
+        </variant>
+      </variantList>
+    </layout>
+  </layoutList>
+</xkbConfigRegistry>

@@ -4,7 +4,7 @@
     name:
       - git
       - openjdk-8-jdk
-      - openjdk-20-jdk
+      - openjdk-22-jdk
       - maven
       - virtualbox
       - vagrant

@@ -8,3 +8,8 @@
     - gb
     - se
     - us 
+
+- name: Add layouts to gnome options
+  ansible.builtin.copy:
+    src: "files/evdev.xml"
+    dest: ".config/xkb/rules/evdev.xml"

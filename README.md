@@ -25,11 +25,25 @@ or
 
 
 ## Todo
+
+### Paper WM
+- keyboard
+- nautilus
+- mouse, 3-button for right
+- back in browser
+- keyboard shortcuts
+    - nautilus
+    - vivaldi
+    - terminal
+    - close window?
+    - rofi menus?
+
+
+### BSPWM
 - Auto updates?
 - lock screen on lid close.
 - Run powertop? Or laptop-mode-tools? Set good powersaving settings...
 - fingerprint reader
-
 
 ## Setting up a test vm
 Install ubuntu in virtualbox.
