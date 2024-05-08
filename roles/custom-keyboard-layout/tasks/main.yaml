@@ -1,9 +1,12 @@
 
+#MKDIR
+
 - name: Add custom keyboard layouts
-  become: true
+  #become: true
   ansible.builtin.copy:
     src: "files/{{ item }}"
-    dest: "/usr/share/X11/xkb/symbols/{{ item }}"
+    #dest: "/usr/share/X11/xkb/symbols/{{ item }}"
+    dest: ".config/xkb/symbols/{{ item }}"
   with_items: 
     - gb
     - se

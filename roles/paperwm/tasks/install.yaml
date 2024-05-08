@@ -17,3 +17,4 @@
   ansible.builtin.command:
     cmd: /home/markus/.local/bin/gext install "monitor@astraext.github.io" gext enable "monitor@astraext.github.io"
 
+# install spaace-bar too
