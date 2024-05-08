@@ -4,10 +4,10 @@
     name:
       - git
       - openjdk-8-jdk
-      - openjdk-22-jdk
+      - openjdk-21-jdk
       - maven
       - virtualbox
-      - vagrant
+      #- vagrant
       - curl
       - jq
     state: present
