@@ -9,12 +9,13 @@ confirm() {
 fixmonitor="Fix monitor layout"
 reload="Reload sxhkd configuration"
 restartpan="Restart polybar"
+singlepan="Single polybar on main display"
 quit="Logout"
 reboot="Reboot"
 shutdown="Shutdown"
 
 
-content="$fixmonitor\n$reload\n$restartpan\n$quit\n$reboot\n$shutdown"
+content="$fixmonitor\n$reload\n$restartpan\n$singlepan\n$quit\n$reboot\n$shutdown"
 
 selection=$(echo -e $content | rofi -dmenu -i -markup-rows -p "Action: " -font "JetBrains Mono NF 24" -width 10 -lines 5)
 case $selection in
@@ -24,6 +25,8 @@ case $selection in
         pkill -USR1 -x sxhkd ;;
     $restartpan)
         pkill polybar; polybar bar1; polybar bar2; polybar bar3 ;;
+    $singlepan)
+        pkill polybar; polybar bar1 ;;
     $quit)
         [[ $(confirm $quit) = 1 ]] && (bspc quit) ;;
     $reboot)

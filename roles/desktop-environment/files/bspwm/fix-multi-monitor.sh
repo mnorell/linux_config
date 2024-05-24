@@ -1,11 +1,37 @@
-#!/bin/bash
+#!/bin/bash -e
+
+function configureMonitors() {
+
+    # Find all connected monitors
+    monitors=( $(xrandr -q | grep " connected" | awk '{print $1}' | sort -r) )
+    monitor_count=${#monitors[@]}
+
+    if [ $monitor_count = "1" ]; then
+        echo "One monitor connected"
+        xrandr --auto
+
+    elif [ $monitor_count = "2" ]; then
+        echo "Two monitors connected, left: ${monitors[0]}, right: ${monitors[1]}"
+        xrandr --output ${monitors[1]} --mode 1920x1080 --right-of eDP1
+
+    else
+        echo "ERROR too many connected monitors: $monitor_count"
+    fi
+
+    echo ""
+    echo "Full output from xrandr"
+    xrandr -q
+    echo ""
+
+}
 
 function fixDesktops() {
 
-    # Gather facts
-    monitors=( $(xrandr -q | grep " connected" | grep -v "connected (" | awk '{print $1}' | sort) )
+    # Find all active monitors
+    monitors=( $(xrandr -q | grep " connected" | grep -v "connected (" | awk '{print $1}' | sort -r) )
     monitor_count=${#monitors[@]}
 
+    # (IFS, handle bash array splitting)
     OLDIFS=$IFS
     IFS=$'\n'
     desktops=( $(bspc query -D --names | sort | grep -v Desktop) )
@@ -57,17 +83,17 @@ function fixDesktops() {
         bspc desktop "%${desktops[2]}"  --to-monitor ${monitors[0]}
         bspc desktop "%${desktops[3]}"  --to-monitor ${monitors[0]}
         bspc desktop "%${desktops[4]}"  --to-monitor ${monitors[0]}
-        bspc desktop "%${desktops[5]}"  --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[6]}"  --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[7]}"  --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[8]}"  --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[9]}"  --to-monitor ${monitors[1]}
-        bspc desktop "%${desktops[10]}" --to-monitor ${monitors[2]}
+        bspc desktop "%${desktops[5]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[6]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[7]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[8]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[9]}"  --to-monitor ${monitors[0]}
+        bspc desktop "%${desktops[10]}" --to-monitor ${monitors[1]}
         bspc desktop "%${desktops[11]}" --to-monitor ${monitors[2]}
         bspc desktop "%${desktops[12]}" --to-monitor ${monitors[2]}
 
     else
-        echo "ERROR"
+        echo "ERROR too many active monitors: $monitor_count"
     fi
 
 
@@ -109,6 +135,8 @@ function fixPolybar() {
     nohup polybar bar3 &
 }
 
+configureMonitors
+sleep 1
 fixDesktops
 fixPolybar
 

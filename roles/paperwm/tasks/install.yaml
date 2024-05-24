@@ -2,19 +2,30 @@
 - name: Install PIP
   become: true
   ansible.builtin.package:
-    name: python3-pip
+    name: 
+      - python3-pip
+      - python3-venv
+      - gnome-shell-extension-manager
+
+- name: Create Python virtual environment
+  command:
+    cmd: python3 -m venv ~/bin/python_virtual_env
+    creates: "~/bin/python_virtual_env"
 
 - name: Install gext, 
   ansible.builtin.pip:
+    # requirements: /my_app/requirements.txt
+    virtualenv: ~/bin/python_virtual_env
+    virtualenv_command: /usr/bin/python3 -m venv
     name: gnome-extensions-cli
-    extra_args: --user --upgrade
+    extra_args: --upgrade
 
 - name: Install gnome extension PaperWM
   ansible.builtin.command:
-    cmd: /home/markus/.local/bin/gext install "paperwm@paperwm.github.com" gext enable "paperwm@paperwm.github.com"
+    cmd: ~/bin/python_virtual_env/bin/gext install "paperwm@paperwm.github.com" gext enable "paperwm@paperwm.github.com"
 
 - name: Install gnome extension Astra monitor
   ansible.builtin.command:
-    cmd: /home/markus/.local/bin/gext install "monitor@astraext.github.io" gext enable "monitor@astraext.github.io"
+    cmd: ~/bin/python_virtual_env/bin/gext install "monitor@astraext.github.io" gext enable "monitor@astraext.github.io"
 
 # install spaace-bar too

@@ -1,9 +1,9 @@
 - hosts: localhost
   connection: local
   roles:
+    # - role: paperwm
     - role: desktop-environment
     - role: hardware-support
     - role: dev-tools
     - role: custom-keyboard-layout
     # - role: unattended-upgrades use custom script?
-    
