@@ -6,4 +6,5 @@
     - role: hardware-support
     - role: dev-tools
     - role: custom-keyboard-layout
-    # - role: unattended-upgrades use custom script?
+    #- role: unattended-upgrades use custom script? Working out of the box?
+    
