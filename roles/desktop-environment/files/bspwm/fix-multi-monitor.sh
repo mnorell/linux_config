@@ -12,7 +12,7 @@ function configureMonitors() {
 
     elif [ $monitor_count = "2" ]; then
         echo "Two monitors connected, left: ${monitors[0]}, right: ${monitors[1]}"
-        xrandr --output ${monitors[1]} --mode 1920x1080 --right-of eDP1
+        xrandr --output ${monitors[1]} --mode 1920x1080 --scale 2x2 --right-of eDP1
 
     else
         echo "ERROR too many connected monitors: $monitor_count"
