@@ -7,16 +7,16 @@
       - rofi
       - xdotool
       - dunst
-      #- numix-gtk-theme # do i use this?
+      - redshift-gtk
     state: present
 
 - name: Install base packages (ubuntu)
   become: true
   ansible.builtin.package:
     name: 
-      - x11-xserver-utils # fedora xsetroot
-      - suckless-tools # fedora? wmname
-      - fonts-jetbrains-mono # fedora jetbrains-mono-fonts
+      - x11-xserver-utils
+      - suckless-tools
+      - fonts-jetbrains-mono
     state: present
   when:
     - ansible_facts['distribution'] == "Ubuntu"

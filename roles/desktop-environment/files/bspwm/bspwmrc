@@ -45,6 +45,7 @@ polybar bar3 &
 # Startup apps.
 start nm-applet
 start fusuma -d
+start redshift-gtk
 
 # Somehow the super-space shortcut only works after a reload. So let's reload.
 sleep 1

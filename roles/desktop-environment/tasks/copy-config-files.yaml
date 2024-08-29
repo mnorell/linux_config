@@ -12,6 +12,11 @@
     - sxhkd
     - Thunar
 
+- name: Copy .config files 2
+  ansible.builtin.copy:
+    src: "files/redshift/redshift.conf"
+    dest: "~/.config/redshift.conf"
+
 - name: Make files executable
   ansible.builtin.file:
     path: "{{ item }}"
