@@ -11,6 +11,7 @@
     - polybar
     - sxhkd
     - Thunar
+    - kitty
 
 - name: Copy .config files 2
   ansible.builtin.copy:
