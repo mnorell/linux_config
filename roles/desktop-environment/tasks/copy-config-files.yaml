@@ -1,5 +1,5 @@
 
-- name: Copy .config files
+- name: Copy .config folders
   ansible.builtin.copy:
     src: "files/{{ item }}/"
     dest: "~/.config/{{ item }}/"
@@ -8,15 +8,20 @@
     - bspwm
     - dunst
     - fish
+    - kitty
     - polybar
     - sxhkd
     - Thunar
-    - kitty
 
-- name: Copy .config files 2
+- name: Copy redshift config file
   ansible.builtin.copy:
     src: "files/redshift/redshift.conf"
     dest: "~/.config/redshift.conf"
+
+- name: Copy nano config file
+  ansible.builtin.copy:
+    src: "files/nano/nanorc"
+    dest: "~/.nanorc"
 
 - name: Make files executable
   ansible.builtin.file:
