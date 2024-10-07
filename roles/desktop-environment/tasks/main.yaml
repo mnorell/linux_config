@@ -69,6 +69,8 @@
       - gnome-terminal
       - gnome-tweaks
       - thunar
+      - thunar-archive-plugin
+      # add fastfetch in 24.10
     state: present
 
 - name: Install applications (ubuntu)
