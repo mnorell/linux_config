@@ -16,7 +16,7 @@
   become: true
   community.general.snap:
     name:
-      - intellij-idea-community
+      - intellij-idea-ultimate
       - code
       - node
       - mqtt-explorer

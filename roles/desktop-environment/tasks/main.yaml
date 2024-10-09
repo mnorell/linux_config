@@ -9,6 +9,7 @@
       - dunst
       - kitty
       - redshift-gtk
+      - fastfetch
     state: present
 
 - name: Install base packages (ubuntu)
