@@ -22,6 +22,8 @@ or
 - set `GRUB_GFXMODE=1920x1440` in `/etc/default/grub`, and run `sudo update-grub`
 - `sudo dpkg-reconfigure console-setup`:
     Set: `UTF-8`, `Combined: Lat. Slav. Greek`, `Terminus`, max size.
+- login to vscode settings sync.
+- login to intellij settings sync, add catppuccin theme and icons, disable unused plugins.
 
 
 ## Todo
