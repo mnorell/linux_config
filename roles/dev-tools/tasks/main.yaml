@@ -7,9 +7,10 @@
       - openjdk-21-jdk
       - maven
       - virtualbox
-      #- vagrant
+      # - vagrant
       - curl
       - jq
+      - ansible-lint
     state: present
 
 - name: Install developer tools, from snap
@@ -20,7 +21,7 @@
       - code
       - node
       - mqtt-explorer
-    classic: yes
+    classic: true
 
 - name: Install developer tools, from npm
   become: true
@@ -31,7 +32,7 @@
 
 - name: Import docker apt repo keys
   become: true
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
 
 - name: Add docker apt repositories
@@ -57,10 +58,11 @@
   ansible.builtin.copy:
     content: '{ "features": { "buildkit": true } }'
     dest: /etc/docker/daemon.json
+    mode: '0644'
 
 - name: Add user '{{ ansible_env.USER }}' to group 'docker'
   become: true
-  user:
+  ansible.builtin.user:
     name: '{{ ansible_env.USER }}'
     groups: docker
-    append: yes
+    append: true

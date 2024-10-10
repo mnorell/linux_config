@@ -1,11 +1,12 @@
-
 - name: Set DPI for browsers
   ansible.builtin.copy:
     src: files/font-size/Xresources
     dest: ~/.Xresources
+    mode: '0644'
 
 - name: Set font scaling for GTK and QT apps
   become: true
   ansible.builtin.copy:
     src: files/font-size/font_scaling
     dest: /etc/profile.d/
+    mode: '0644'

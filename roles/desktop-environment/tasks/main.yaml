@@ -1,7 +1,7 @@
 - name: Install base packages
   become: true
   ansible.builtin.package:
-    name: 
+    name:
       - bspwm
       - polybar
       - rofi
@@ -15,7 +15,7 @@
 - name: Install base packages (ubuntu)
   become: true
   ansible.builtin.package:
-    name: 
+    name:
       - x11-xserver-utils
       - suckless-tools
       - fonts-jetbrains-mono
@@ -26,7 +26,7 @@
 - name: Install base packages (fedora)
   become: true
   ansible.builtin.package:
-    name: 
+    name:
       - xsetroot
       - wmname
       - jetbrains-mono-fonts
@@ -37,7 +37,7 @@
 - name: Install cli tools
   become: true
   ansible.builtin.package:
-    name: 
+    name:
       - fish
       - ranger
       - bat
@@ -46,14 +46,14 @@
 
 - name: Import Vivaldi APT repo keys
   become: true
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://repo.vivaldi.com/archive/linux_signing_key.pub
   when:
     - ansible_facts['distribution'] == "Ubuntu"
 
 - name: Add Vivaldi APT repositories
   become: true
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: deb https://repo.vivaldi.com/archive/deb/ stable main
     filename: vivaldi-stable
   when:
@@ -62,7 +62,7 @@
 - name: Install applications
   become: true
   ansible.builtin.package:
-    name: 
+    name:
       - gedit
       - gnome-calculator
       - gnome-screenshot
@@ -77,11 +77,11 @@
 - name: Install applications (ubuntu)
   become: true
   ansible.builtin.package:
-    name: 
+    name:
       - chromium-browser
       - dconf-cli
       - usb-creator-gtk
-      - vivaldi-stable 
+      - vivaldi-stable
     state: present
   when:
     - ansible_facts['distribution'] == "Ubuntu"
@@ -89,17 +89,20 @@
 - name: Install applications (fedora)
   become: true
   ansible.builtin.package:
-    name: 
+    name:
       - chromium
     state: present
   when:
     - ansible_facts['distribution'] == "Fedora"
 
-- ansible.builtin.import_tasks:
+- name: Font size
+  ansible.builtin.import_tasks:
     file: font-size.yaml
 
-- ansible.builtin.import_tasks:
+- name: Copy config
+  ansible.builtin.import_tasks:
     file: copy-config-files.yaml
 
-- ansible.builtin.import_tasks:
+- name: Set look n feel
+  ansible.builtin.import_tasks:
     file: look-n-feel.yaml

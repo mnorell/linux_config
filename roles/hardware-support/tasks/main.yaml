@@ -2,7 +2,7 @@
 - name: Install hardware support
   become: true
   ansible.builtin.package:
-    name: 
+    name:
       - powertop
       - laptop-mode-tools
       - xserver-xorg-input-synaptics
@@ -10,7 +10,7 @@
       - libinput-tools
     state: present
 
-#Laptop mode tools? powerstat?sudo apt install linux-tools-generic
+# Laptop mode tools? powerstat?sudo apt install linux-tools-generic
 # sudo apt install linux-tools-common
 # sudo apt install laptop-mode-tools
 # sudo apt install powerstat
@@ -28,29 +28,33 @@
   ansible.builtin.copy:
     src: files/20-intel.conf
     dest: /etc/X11/xorg.conf.d/
+    mode: '0644'
 
 - name: Configure synaptics touchpad driver
   become: true
   ansible.builtin.copy:
     src: files/90-synaptics.conf
     dest: /etc/X11/xorg.conf.d/
+    mode: '0644'
 
 - name: Create fusuma config dir, for multitouch touchpad gestures
   ansible.builtin.file:
     path: ~/.config/fusuma/
     state: directory
+    mode: '0755'
 
 - name: Add fusuma config, for multitouch touchpad gestures
   ansible.builtin.copy:
     src: files/fusuma.yml
     dest: ~/.config/fusuma/config.yml
+    mode: '0644'
 
 - name: Add user '{{ ansible_env.USER }}' to group 'input', for fusuma
   become: true
-  user:
+  ansible.builtin.user:
     name: '{{ ansible_env.USER }}'
     groups: input
-    append: yes
+    append: true
 
 - name: Do not autostart bluetooth
   become: true

@@ -1,8 +1,8 @@
-
 - name: Copy .config folders
   ansible.builtin.copy:
     src: "files/{{ item }}/"
     dest: "~/.config/{{ item }}/"
+    mode: '0755'
   with_items:
     - bat
     - bspwm
@@ -17,11 +17,13 @@
   ansible.builtin.copy:
     src: "files/redshift/redshift.conf"
     dest: "~/.config/redshift.conf"
+    mode: '0644'
 
 - name: Copy nano config file
   ansible.builtin.copy:
     src: "files/nano/nanorc"
     dest: "~/.nanorc"
+    mode: '0644'
 
 - name: Make files executable
   ansible.builtin.file:
@@ -36,4 +38,4 @@
   ansible.builtin.copy:
     src: files/fonts/iosevka_nerd_font.ttf
     dest: ~/.local/share/fonts/
-    
+    mode: '0644'

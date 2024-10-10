@@ -1,18 +1,18 @@
-
-#MKDIR .config/xkb/symbols/
+# MKDIR .config/xkb/symbols/
 
 - name: Add custom keyboard layouts
   become: true
   ansible.builtin.copy:
     src: "files/{{ item }}"
     dest: "/usr/share/X11/xkb/symbols/{{ item }}"
-    #dest: ".config/xkb/symbols/{{ item }}"
-  with_items: 
+    # dest: ".config/xkb/symbols/{{ item }}"
+    mode: '0644'
+  with_items:
     - gb
     - se
-    - us 
+    - us
 
-#- name: Add layouts to gnome options
-#  ansible.builtin.copy:
-#    src: "files/evdev.xml"
-#    dest: ".config/xkb/rules/evdev.xml"
+# - name: Add layouts to gnome options
+#   ansible.builtin.copy:
+#     src: "files/evdev.xml"
+#     dest: ".config/xkb/rules/evdev.xml"
