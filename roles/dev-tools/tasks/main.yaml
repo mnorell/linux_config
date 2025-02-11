@@ -41,8 +41,6 @@
     repo: deb https://download.docker.com/linux/ubuntu {{ ansible_facts.lsb.codename }} stable
     filename: docker
 
-# Docker not available for mantic yet...
-
 - name: Install docker
   become: true
   ansible.builtin.package:
