@@ -13,7 +13,8 @@ function configureMonitors() {
     elif [ $monitor_count = "2" ]; then
         echo "Two monitors connected, left: ${monitors[0]}, right: ${monitors[1]}"
         #xrandr --output ${monitors[1]} --mode 1920x1080 --scale 2x2 --right-of eDP1
-        xrandr --output ${monitors[1]} --mode 3840x2160 --pos 3840x-2160 --scale 2x2 --auto
+        xrandr --output eDP1 --mode 3840x2400 --pos 0x2400 --output ${monitors[1]} --mode 3840x2160 --pos 3840x0 --scale 2x2 --auto 
+
         #--left-of eDP1 
         #--output --pos 7680x0
 
@@ -39,7 +40,7 @@ function fixDesktops() {
     IFS=$'\n'
     desktops=( $(bspc query -D --names | sort | grep -v Desktop) )
     IFS=$OLDIFS
-    
+
 
     # Make sure all monitors have a default desktop before we start moving 
     # others around (can't move last desktop from a monitor).
@@ -115,6 +116,7 @@ function fixDesktops() {
         "%i. $(cat ~/.config/bspwm/spaces/i)" \
         "%o. $(cat ~/.config/bspwm/spaces/o)" \
         "%p. $(cat ~/.config/bspwm/spaces/p)" 
+        
 }
 
 function fixPolybar() {
