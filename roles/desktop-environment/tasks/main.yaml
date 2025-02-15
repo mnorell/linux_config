@@ -5,6 +5,9 @@
       - bspwm
       - polybar
       - rofi
+      - hyprland
+      - waybar
+      - wofi
       - xdotool
       - dunst
       - kitty

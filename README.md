@@ -28,6 +28,16 @@ or
 
 ## Todo
 
+### Hyprland
+- waybar
+- mouse buttons
+- mouse gestures
+- system menu
+- keyboard layout
+- font anti aliasing
+- lock screen
+
+
 ### Paper WM
 - keyboard
 - nautilus
