@@ -5,9 +5,13 @@
       - bspwm
       - polybar
       - rofi
+      
       - hyprland
       - waybar
+      - pavucontrol
+      - brightnessctl
       - wofi
+
       - xdotool
       - dunst
       - kitty

@@ -33,7 +33,7 @@ or
 - mouse buttons
 - mouse gestures
 - system menu
-- keyboard layout
+- brightnessctl sudoless
 - font anti aliasing
 - lock screen
 

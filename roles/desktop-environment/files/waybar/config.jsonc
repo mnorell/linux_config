@@ -18,13 +18,14 @@
     "modules-right": [
         // "mpd",
         // "idle_inhibitor",
+        "hyprland/language",
         "pulseaudio",
-        "network",
+        "backlight",
+        // "network",
         // "power-profiles-daemon",
         "cpu",
         "memory",
         // "temperature",
-        "backlight",
         // "keyboard-state",
         // "sway/language",
         "battery",
@@ -53,14 +54,20 @@
     "hyprland/workspaces": {
         "format": "{icon} {id} {name}"
     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+    // "keyboard-state": {
+    //     "numlock": true,
+    //     "capslock": true,
+    //     "format": "{name} {icon}",
+    //     "format-icons": {
+    //         "locked": "",
+    //         "unlocked": ""
+    //     }
+    // },
+    "hyprland/language": {
+        "format": "apa {}",
+        "format-uk": "uk",
+        "format-en": "uk",
+        "format-se": "se"
     },
     // "sway/mode": {
     //     "format": "<span style=\"italic\">{}</span>"
@@ -173,7 +180,7 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+        "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -204,7 +211,7 @@
     //     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     // },
     "custom/power": {
-        "format" : "⏻ ",
+        "format" : " ⏻ ",
 		"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
