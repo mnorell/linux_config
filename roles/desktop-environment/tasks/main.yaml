@@ -7,7 +7,11 @@
       - rofi
 
       - sway
+      - swayidle
+      - swaylock
       - python3-i3ipc
+      - wlsunset
+
       - hyprland
       - waybar
       - pavucontrol
