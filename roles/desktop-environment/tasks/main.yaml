@@ -5,7 +5,9 @@
       - bspwm
       - polybar
       - rofi
-      
+
+      - sway
+      - python3-i3ipc
       - hyprland
       - waybar
       - pavucontrol

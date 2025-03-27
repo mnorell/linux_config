@@ -28,13 +28,17 @@ or
 
 ## Todo
 
+
+### sway...
+- everything
+
 ### Hyprland
 - waybar
 - mouse buttons
-- mouse gestures
-- system menu
-- brightnessctl sudoless
-- font anti aliasing
+- mouse gestures, back + forward
+- mouse pointers
+- scrolling (Adding touch_scroll_multiplier 10.0 in my ~/.config/kitty/kitty.conf was enough)
+- multimonitor
 - lock screen
 
 
