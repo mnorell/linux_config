@@ -60,8 +60,6 @@ exec swayidle -w \
     bindgesture swipe:right workspace prev
     bindgesture swipe:left workspace next
 #
-### Gaps:
-#
 ### Key bindings
 #
 # Basics:
@@ -176,6 +174,10 @@ exec swayidle -w \
         bindsym Escape mode "default"
     }
     bindsym $mod+r mode "resize"
+#
+# Application shortcuts:
+    bindsym $mod+z exec vivaldi
+    bindsym $mod+x exec thunar
 #
 ### Status Bar:
     bar {
