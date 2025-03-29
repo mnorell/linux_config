@@ -56,6 +56,7 @@ WINDOW_ICONS = {
     "Thunderbird": "",
     "thunderbird": "",
     "transmission-gtk": "",
+    "vivaldi": "",
     "vlc": ""
 }
 
@@ -102,6 +103,7 @@ def undo_window_renaming(ipc):
 
 
 def parse_workspace_name(name):
+    print(name)
     return re.match(
         "(?P<num>[0-9]+):?(?P<shortname>\w+)? ?(?P<icons>.+)?", name
     ).groupdict()
@@ -109,18 +111,19 @@ def parse_workspace_name(name):
 
 def construct_workspace_name(parts):
     new_name = str(parts["num"])
-    if parts["shortname"] or parts["icons"]:
+    title = read_name_from_file(parts["num"])
+    if parts["shortname"] or parts["icons"] or title:
         new_name += ":"
-
+        if title:
+            new_name += title
         if parts["shortname"]:
             new_name += parts["shortname"]
-
         if parts["icons"]:
             new_name += " " + parts["icons"]
-        
-        new_name += " testname"
     return new_name
 
+def read_name_from_file(workspace):
+    return "xyz osv osv osv"
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(

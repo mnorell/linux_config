@@ -11,12 +11,13 @@
       - swaylock
       - python3-i3ipc
       - wlsunset
-
-      - hyprland
       - waybar
+      # - wtype
+
+      # - hyprland
       - pavucontrol
       - brightnessctl
-      - wofi
+      # - wofi
 
       - xdotool
       - dunst

@@ -28,7 +28,7 @@
         "memory",
         // "temperature",
         // "keyboard-state",
-        // "sway/language",
+        "sway/language",
         "battery",
         // "battery#bat2",
         "clock",
@@ -52,6 +52,9 @@
             "focused": "",
             "default": ""
         }
+    },
+    "sway/language": {
+	    "format": "{short} {variant}"
     },
     "hyprland/workspaces": {
         "format": "{id}. {name}"
