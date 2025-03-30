@@ -21,14 +21,14 @@ include /etc/sway/config-vars.d/*
 ### Looks:
     output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     #font pango:Sans 12
-    default_border pixel 3
+    default_border pixel 5
     default_floating_border normal
     hide_edge_borders smart
     smart_gaps on
     gaps inner 10
 
 set $cl_high #009ddc
-set $cl_indi #d9d8d8
+set $cl_indi #ff00ea
 set $cl_back #231f20
 set $cl_fore #d9d8d8
 set $cl_urge #ee2e24
@@ -38,6 +38,8 @@ client.focused          $cl_high $cl_high $cl_fore $cl_indi $cl_high
 client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
 client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
 client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
+
+focus_follows_mouse no
 
 #
 ### Lockscreen and display sleep:
@@ -157,14 +159,16 @@ exec swayidle -w \
     # Move workspace to monitor
     bindsym $mod+comma move workspace to output left
     bindsym $mod+period move workspace to output right
+    #
+    # Rename workspace
+    bindsym $mod+n exec bash ~/.config/sway/scripts/rename_workspace.sh
 #
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+b splitt
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -183,18 +187,6 @@ exec swayidle -w \
     # Move focus to the parent container
     bindsym $mod+a focus parent
 #
-# Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
-#
 # Resizing containers:
     mode "resize" {
         bindsym Left resize shrink width 10px
@@ -212,6 +204,7 @@ exec swayidle -w \
     bindsym $mod+x exec thunar
 #
 ### Status Bar:
+    # Issue, waybar cant start, solved by: systemctl --user mask xdg-desktop-portal-gnome
     bar {
         swaybar_command waybar
     }
@@ -220,7 +213,11 @@ exec swayidle -w \
 exec {
     nm-applet
     wlsunset -t "5000" -T "6500" -d "900" -S "07:00" -s "22:00"
-    python3 /home/markus/.config/sway/scripts/autoname-workspaces.py
+    #python3 ~/.config/sway/scripts/autoname-workspaces.py
 }
 # exec_always {
 # }
+
+#fixes...
+exec "dbus-update-activation-environment --systemd --all "
+exec "dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway "
