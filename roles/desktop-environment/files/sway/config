@@ -45,7 +45,7 @@
         drag enabled
         tap_button_map lmr
         click_method clickfinger
-        clickfinger_button_map lmr # not working?
+        #clickfinger_button_map lmr # not working? bug https://github.com/swaywm/sway/issues/8495
         natural_scroll enabled
     }
     # Allow switching between workspaces with left and right swipes (three fingers)
