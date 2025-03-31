@@ -8,7 +8,7 @@
 #
 ### Look and feel
     #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg #888888
+output * bg #888888 solid_color
     default_border pixel 4
     default_floating_border normal
     hide_edge_borders smart
