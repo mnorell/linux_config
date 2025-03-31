@@ -1,49 +1,34 @@
 
 ### Variables
+    set $mod Mod4
+    set $term kitty
+    set $menu rofi -show drun -font "JetBrains Mono NF 16" -width 20 -lines 10 -show-icons
+
+    include /etc/sway/config-vars.d/*
 #
-# Logo key. Use Mod1 for Alt.
-set $mod Mod4
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
-# Your preferred terminal emulator
-set $term kitty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-#set $menu dmenu_path | wmenu | xargs swaymsg exec --
-set $menu rofi -show drun -font "JetBrains Mono NF 16" -width 20 -lines 10 -show-icons
-
-include /etc/sway/config-vars.d/*
-
-### Looks:
+### Look and feel
     output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-    #font pango:Sans 12
-    default_border pixel 5
+    default_border pixel 4
     default_floating_border normal
     hide_edge_borders smart
     smart_gaps on
     gaps inner 10
-
-set $cl_high #009ddc
-set $cl_indi #ff00ea
-set $cl_back #231f20
-set $cl_fore #d9d8d8
-set $cl_urge #ee2e24
-
-# Colors                border   bg       text     indi     childborder
-client.focused          $cl_high $cl_high $cl_fore $cl_indi $cl_high
-client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
-client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
-client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
-
-focus_follows_mouse no
-
+    focus_follows_mouse no
+    #
+    # Colors
+        set $cl_high #fba922
+        set $cl_indi #ff00ea
+        set $cl_back #231f20
+        set $cl_fore #d9d8d8
+        set $cl_urge #ee2e24
+        #                       border   bg       text     indi     childborder
+        client.focused          $cl_high $cl_high $cl_fore $cl_indi $cl_high
+        client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
+        client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
+        client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 #
-### Lockscreen and display sleep:
-exec swayidle -w \
+### Lockscreen and display sleep
+    exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
@@ -65,8 +50,8 @@ exec swayidle -w \
     bindgesture swipe:4:right workspace prev
     bindgesture swipe:4:left  workspace next
     # alt + direction arrows, for back forward in some apps, like browsers and thunar.
-    #bindgesture swipe:3:right exec wtype -M alt -k left -m alt
-    #bindgesture swipe:3:left  exec wtype -M alt -k right -m alt
+    bindgesture swipe:3:right exec wtype -M alt -k left -m alt
+    bindgesture swipe:3:left  exec wtype -M alt -k right -m alt
 #
 ### Key bindings
 #
@@ -171,7 +156,7 @@ exec swayidle -w \
     bindsym $mod+b splitt
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    # bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
@@ -212,7 +197,7 @@ exec swayidle -w \
 ### Autostart:
 exec {
     nm-applet
-    wlsunset -t "5000" -T "6500" -d "900" -S "07:00" -s "22:00"
+    wlsunset -t "5000" -T "6500" -d "900" -S "07:00" -s "20:00"
     #python3 ~/.config/sway/scripts/autoname-workspaces.py
 }
 # exec_always {
