@@ -7,7 +7,8 @@
     include /etc/sway/config-vars.d/*
 #
 ### Look and feel
-    output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+    #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg #888888
     default_border pixel 4
     default_floating_border normal
     hide_edge_borders smart
@@ -173,6 +174,12 @@
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    # Gaps
+    bindsym $mod+equal gaps inner all plus 5
+    bindsym $mod+minus gaps inner all minus 5
+    bindsym $mod+Shift+equal gaps outer all plus 5
+    bindsym $mod+Shift+minus gaps outer all minus 5
 #
 # Resizing containers:
     mode "resize" {
