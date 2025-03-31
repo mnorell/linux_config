@@ -42,8 +42,10 @@
     input type:touchpad {
         dwt enabled #disable while typing
         tap enabled
+        drag enabled
         tap_button_map lmr
-        click_method none
+        click_method clickfinger
+        clickfinger_button_map lmr # not working?
         natural_scroll enabled
     }
     # Allow switching between workspaces with left and right swipes (three fingers)
