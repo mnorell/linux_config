@@ -129,6 +129,6 @@
         "format": "{} ",
         "tooltip": true,
         "interval": 1,
-        "exec": "~/.config/waybar/get_layout.sh"
+        "exec": "~/.config/waybar/scripts/get_layout.sh"
     }
 }

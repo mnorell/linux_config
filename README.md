@@ -11,7 +11,7 @@ or
 `sudo dnf install ansible python3-psutil`
 
 ## Run
-`sudo echo "" && ansible-playbook desktop-env.yaml`
+`bash run_install.sh`
 
 (sudo echo for "passwordless sudo")
 

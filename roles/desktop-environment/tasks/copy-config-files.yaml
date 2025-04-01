@@ -10,8 +10,10 @@
     - fish
     - kitty
     - polybar
+    - sway
     - sxhkd
     - Thunar
+    - waybar
 
 - name: Copy redshift config file
   ansible.builtin.copy:
@@ -32,7 +34,10 @@
   with_items:
     - ~/.config/bspwm/bspwmrc
     - ~/.config/bspwm/refresh_spaces.sh
+    - ~/.config/sway/scripts/lock-screen.sh
+    - ~/.config/sway/scripts/rename_workspace.sh
     - ~/.config/sxhkd/rofi-system-menu.sh
+    - ~/.config/waybar/scripts/get_layout.sh
 
 - name: Add iosevka icon font
   ansible.builtin.copy:
