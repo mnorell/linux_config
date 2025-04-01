@@ -3,12 +3,10 @@
     set $mod Mod4
     set $term kitty
     set $menu rofi -show drun -font "JetBrains Mono NF 16" -width 20 -lines 10 -show-icons
-
     include /etc/sway/config-vars.d/*
 #
 ### Look and feel
-    #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg #888888 solid_color
+    output * bg #888888 solid_color
     default_border pixel 4
     default_floating_border normal
     hide_edge_borders smart
@@ -30,9 +28,9 @@ output * bg #888888 solid_color
 #
 ### Lockscreen and display sleep
     exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+         timeout 300  '~/.config/sway/scripts/lock-screen.sh' \
+         timeout 600  'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep '~/.config/sway/scripts/lock-screen.sh'
 #
 ### Input configuration
     input type:keyboard {
