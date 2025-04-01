@@ -112,9 +112,9 @@ label:focus {
     color: @base;
 }
 
-#pulseaudio.muted {
+/* #pulseaudio.muted {
     background-color: @muted;
-}
+} */
 
 #battery.warning {
     background-color: @bat_warn;

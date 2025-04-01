@@ -19,8 +19,8 @@
         //"network",
         "tray",
         "battery",
-        "clock",
         "custom/keyboard",
+        "clock",
         "custom/power"
     ],
      "sway/workspaces": {
@@ -107,10 +107,10 @@
         "format-disconnected": "Disconnected ⚠"
     },
     "pulseaudio": {
-        "scroll-step": 2,
+        "scroll-step": 1,
         "format": "{volume}% ",
         "format-muted": "",
-        "on-click": "pavucontrol"
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
     "custom/power": {
         "format" : " ⏻ ",
@@ -119,14 +119,14 @@
 		"menu-file": "/home/markus/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
             "reload": "swaymsg reload",
-            "logout": "swaymsg exit",
-			"shutdown": "shutdown",
-			"reboot": "reboot"
+            "logout":   "swaynag -t warning -m 'Really logout'   -B 'Yes, logout'   'swaymsg exit'",
+			"shutdown": "swaynag -t warning -m 'Really shutdown' -B 'Yes, shutdown' 'shutdown'",
+			"reboot":   "swaynag -t warning -m 'Really reboot'   -B 'Yes, reboot'   'reboot'"
 		}
     },
-    //Workaround, my keyboard layouts are not properly configured...
+    //Workaround, my keyboard layouts are not properly configured, can't use sway/language.
     "custom/keyboard": {
-        "format": " {}",
+        "format": "{} ",
         "tooltip": true,
         "interval": 1,
         "exec": "~/.config/waybar/get_layout.sh"

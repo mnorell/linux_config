@@ -208,10 +208,13 @@ exec {
     nm-applet
     wlsunset -t "5000" -T "6500" -d "900" -S "07:00" -s "20:00"
     #python3 ~/.config/sway/scripts/autoname-workspaces.py
+
+    # mako running too.
+    killall dunst
 }
 # exec_always {
 # }
 
-#fixes...
+# Fixes. for slow starting xwayland stuff (i think...)
 exec "dbus-update-activation-environment --systemd --all "
 exec "dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway "
