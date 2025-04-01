@@ -16,11 +16,7 @@
       - wtype
       - grim
       - ffmpeg
-
-      # - hyprland
-      - pavucontrol
       - brightnessctl
-      # - wofi
 
       - xdotool
       - dunst
