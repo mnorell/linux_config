@@ -14,6 +14,8 @@
       - waybar
       - mako-notifier
       - wtype
+      - grim
+      - ffmpeg
 
       # - hyprland
       - pavucontrol

@@ -1,7 +1,6 @@
 
 ### Variables
     set $mod Mod4
-    set $term kitty
     set $menu rofi -show drun -font "JetBrains Mono NF 16" -width 20 -lines 10 -show-icons
     include /etc/sway/config-vars.d/*
 #
@@ -47,38 +46,37 @@
         #clickfinger_button_map lmr # not working? bug https://github.com/swaywm/sway/issues/8495
         natural_scroll enabled
     }
+    
     # Allow switching between workspaces with left and right swipes (three fingers)
     bindgesture swipe:4:right workspace prev
     bindgesture swipe:4:left  workspace next
-    # alt + direction arrows, for back forward in some apps, like browsers and thunar.
+
+    # Send alt + direction arrows, for back forward in some apps, like browsers and thunar.
     bindgesture swipe:3:right exec wtype -M alt -k left -m alt
     bindgesture swipe:3:left  exec wtype -M alt -k right -m alt
+
+    # Drag windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    floating_modifier $mod normal
 #
 ### Key bindings
 #
 # Basics:
 #
-    # Start a terminal
-    bindsym $mod+Return exec $term
-
     # Kill focused window
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
-
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+    bindsym $mod+space exec $menu
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
+    # Lock screen
+    bindsym $mod+l exec ~/.config/sway/scripts/lock-screen.sh
+
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Really logout?' -B 'Yes, logout' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -151,10 +149,8 @@
 #
 # Layout stuff:
 #
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splitt
+    # Toggle split direction
+    bindsym $mod+c splitt
 
     # Switch the current container between different layout styles
     # bindsym $mod+s layout stacking
@@ -165,10 +161,7 @@
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+Shift+f floating toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -192,6 +185,7 @@
     bindsym $mod+r mode "resize"
 #
 # Application shortcuts:
+    bindsym $mod+Return exec kitty
     bindsym $mod+z exec vivaldi
     bindsym $mod+x exec thunar
 #
@@ -202,17 +196,17 @@
     }
 #
 ### Autostart:
-exec {
-    nm-applet
-    wlsunset -t "5000" -T "6500" -d "900" -S "07:00" -s "20:00"
-    #python3 ~/.config/sway/scripts/autoname-workspaces.py
+    exec {
+        nm-applet
+        wlsunset -t "5000" -T "6500" -d "900" -S "07:00" -s "20:00"
 
-    # mako running too.
-    killall dunst
-}
-# exec_always {
-# }
+        # mako running too.
+        killall dunst
+    }
+    # These run on reload too
+    # exec_always {
+    # }
 
 # Fixes. for slow starting xwayland stuff (i think...)
-exec "dbus-update-activation-environment --systemd --all "
-exec "dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway "
+    exec "dbus-update-activation-environment --systemd --all "
+    exec "dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway "
