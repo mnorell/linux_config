@@ -6,6 +6,7 @@
 @define-color critical         rgba(255, 0, 0, 0.863);
 @define-color workspace_active #fba922;
 @define-color workspace_urgent rgba(255, 0, 0, 0.863);
+@define-color window_title     #5e3d00;
 
 * {
     border: none;
@@ -110,7 +111,7 @@ label:focus {
     padding: 0 10px;
     margin: 5px 1px;
     border-radius: 16px;
-    background-color: #5e3d00;
+    background-color: @window_title;
 }
 
 #idle_inhibitor.activated {
