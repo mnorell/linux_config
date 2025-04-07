@@ -16,7 +16,7 @@
         "backlight",
         "cpu",
         "memory",
-        //"network",
+        // "network",
         "tray",
         "battery",
         "custom/keyboard",
@@ -32,6 +32,9 @@
      },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "on-click-middle": "swaymsg kill"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -89,22 +92,24 @@
             "critical": 15
         },
         "format": "{time}, {capacity}% {icon}",
-        //"format-full": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
         "format-charging": "{time}, {capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time}, {capacity}% {icon}",
+        // "format-alt": "{time}, {capacity}% {icon}",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
         "interval": 60,
         "interface-ethernet": "enp1s*",
         "interface-wifi": "wlan0",
-        "format-ethernet": "eth ",
-        "format-wifi": " {signalStrength}%",
+        "format-ethernet": " eth",
+        "format-wifi": "{signalStrength}% ",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "tooltip-format-wifi": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "(No IP) ",
-        "format-disconnected": "Disconnected ⚠"
+        "format-linked": "(No IP)",
+        "format-disconnected": "⚠ Disconnected",
+        // "on-click": "swaymsg exec nmtui connect",
+        // "on-click-right": "swaymsg exec nmtui edit"
     },
     "pulseaudio": {
         "scroll-step": 1,
