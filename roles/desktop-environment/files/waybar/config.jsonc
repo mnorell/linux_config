@@ -15,6 +15,8 @@
         "pulseaudio",
         "backlight",
         "cpu",
+        "cpu#frequency",
+        "custom/cpugovernor",
         "memory",
         // "network",
         "tray",
@@ -69,14 +71,20 @@
     },
     "cpu": {
         "interval": 3,
-        "format": "{usage:2}%, {avg_frequency:1.1f} GHz ",
+        // ️
+        "format": "{usage:2}%",
         "on-click": "gnome-system-monitor"
+    },
+    "cpu#frequency": {
+        "interval": 3,
+        "format": "{avg_frequency:1.1f} GHz",
+        "tooltip": false
     },
     "memory": {
         "interval": 3,
         "format": "{}% ",
         "on-click": "gnome-system-monitor",
-        "tooltip-format": "Used: {used:0.1f}G/{total:0.1f}G. Swap: {swapUsed:0.1f}G/{swapTotal:0.1f}G",
+        "tooltip-format": "Used: {used:0.1f}/{total:0.1f} GB\nSwap: {swapUsed:0.1f}/{swapTotal:0.1f} GB",
         "states": {
             "critical": 80
         }
@@ -121,7 +129,7 @@
         "format" : " ⏻ ",
 		"tooltip": false,
 		"menu": "on-click",
-		"menu-file": "/home/markus/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-file": "/home/markus/.config/waybar/power_menu.xml",
 		"menu-actions": {
             "reload": "swaymsg reload",
             "logout":   "swaynag -t warning -m 'Really logout'   -B 'Yes, logout'   'swaymsg exit'",
@@ -132,8 +140,16 @@
     //Workaround, my keyboard layouts are not properly configured, can't use sway/language.
     "custom/keyboard": {
         "format": "{} ",
-        "tooltip": true,
+        "tooltip": false,
         "interval": 1,
         "exec": "~/.config/waybar/scripts/get_layout.sh"
+    },
+    "custom/cpugovernor": {
+        "format": "{}",
+        "interval": 3,
+        "return-type": "json",
+        "exec": "sh ~/.config/waybar/scripts/get_cpugovernor.sh",
+        "on-click": "sh ~/.config/waybar/scripts/toggle_cpugovernor.sh",
+        "tooltip": true
     }
 }

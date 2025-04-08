@@ -74,12 +74,27 @@ label:focus {
 #mode,
 #backlight,
 #battery,
+#custom-cpugovernor,
 #custom-keyboard,
 #tray {
     padding: 0 10px;
     margin: 5px 1px;
     color: @text;
     background-color: @base;
+}
+
+#cpu {
+    border-radius: 4px 0px 0px 4px;
+    margin-right: 0px;
+}
+#cpu.frequency {
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+}
+
+#custom-cpugovernor {
+    border-radius: 0px 4px 4px 0px;
+    margin-left: 0px;
 }
 
 #workspaces button {

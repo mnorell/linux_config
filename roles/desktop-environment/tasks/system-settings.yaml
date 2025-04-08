@@ -1,0 +1,9 @@
+- name: Allow setting cpu governor without sudo
+  become: true
+  community.general.sudoers:
+    name: cpu-governor
+    user: ALL
+    commands:
+      - "/usr/bin/cpupower frequency-set -g powersave"
+      - "/usr/bin/cpupower frequency-set -g performance"
+    nopassword: true

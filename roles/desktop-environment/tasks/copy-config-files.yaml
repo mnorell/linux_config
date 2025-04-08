@@ -38,6 +38,8 @@
     - ~/.config/sway/scripts/rename_workspace.sh
     - ~/.config/sxhkd/rofi-system-menu.sh
     - ~/.config/waybar/scripts/get_layout.sh
+    - ~/.config/waybar/scripts/get_cpugovernor.sh
+    - ~/.config/waybar/scripts/toggle_cpugovernor.sh
 
 - name: Add iosevka icon font
   ansible.builtin.copy:
