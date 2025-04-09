@@ -1,11 +1,16 @@
 # MKDIR .config/xkb/symbols/
+- name: Create config directory if it does not exist
+  ansible.builtin.file:
+    path: "~/.config/xkb/symbols/"
+    state: directory
+    mode: '0755'
 
 - name: Add custom keyboard layouts
-  become: true
+  # become: true
   ansible.builtin.copy:
     src: "files/{{ item }}"
-    dest: "/usr/share/X11/xkb/symbols/{{ item }}"
-    # dest: ".config/xkb/symbols/{{ item }}"
+    # dest: "/usr/share/X11/xkb/symbols/{{ item }}"
+    dest: "~/.config/xkb/symbols/{{ item }}"
     mode: '0644'
   with_items:
     - gb

@@ -41,8 +41,8 @@
     - ~/.config/waybar/scripts/get_cpugovernor.sh
     - ~/.config/waybar/scripts/toggle_cpugovernor.sh
 
-- name: Add iosevka icon font
-  ansible.builtin.copy:
-    src: files/fonts/iosevka_nerd_font.ttf
-    dest: ~/.local/share/fonts/
-    mode: '0644'
+# - name: Add iosevka icon font
+#   ansible.builtin.copy:
+#     src: files/fonts/iosevka_nerd_font.ttf
+#     dest: ~/.local/share/fonts/
+#     mode: '0644'
