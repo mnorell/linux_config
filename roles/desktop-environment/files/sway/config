@@ -212,3 +212,6 @@ bindsym {
 # Fixes. for slow starting xwayland stuff (i think...)
     exec "dbus-update-activation-environment --systemd --all "
     exec "dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway "
+# some more... can't hurt.
+    exec "dbus-update-activation-environment --systemd XDG_SESSION_DESKTOP=sway "
+    exec "dbus-update-activation-environment --systemd XDG_SESSION_TYPE=wayland "
