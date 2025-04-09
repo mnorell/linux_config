@@ -2,50 +2,26 @@
   become: true
   ansible.builtin.package:
     name:
-      - bspwm
-      - polybar
-      - rofi
-
       - sway
       - swayidle
       - swaylock
       - python3-i3ipc
-      - wlsunset
       - waybar
-      - mako-notifier
+
+      - rofi # replace with fuzzle ?
+      - mako
+
+      - wlsunset
       - wtype
       - grim
-      - ffmpeg
+      - ffmpeg-free
       - brightnessctl
 
-      - xdotool
-      - dunst
+      - jetbrains-mono-fonts
+
       - kitty
-      - redshift-gtk
       - fastfetch
     state: present
-
-- name: Install base packages (ubuntu)
-  become: true
-  ansible.builtin.package:
-    name:
-      - x11-xserver-utils
-      - suckless-tools
-      - fonts-jetbrains-mono
-    state: present
-  when:
-    - ansible_facts['distribution'] == "Ubuntu"
-
-- name: Install base packages (fedora)
-  become: true
-  ansible.builtin.package:
-    name:
-      - xsetroot
-      - wmname
-      - jetbrains-mono-fonts
-    state: present
-  when:
-    - ansible_facts['distribution'] == "Fedora"
 
 - name: Install cli tools
   become: true
@@ -55,6 +31,7 @@
       - ranger
       - bat
       - tree
+      - fastfetch
     state: present
 
 - name: Import Vivaldi APT repo keys
@@ -84,26 +61,7 @@
       - gnome-tweaks
       - thunar
       - thunar-archive-plugin
-      # add fastfetch in 24.10
-    state: present
-
-- name: Install applications (ubuntu)
-  become: true
-  ansible.builtin.package:
-    name:
+      # - usb-creator-gtk
       - chromium-browser
-      - dconf-cli
-      - usb-creator-gtk
       - vivaldi-stable
     state: present
-  when:
-    - ansible_facts['distribution'] == "Ubuntu"
-
-- name: Install applications (fedora)
-  become: true
-  ansible.builtin.package:
-    name:
-      - chromium
-    state: present
-  when:
-    - ansible_facts['distribution'] == "Fedora"

@@ -5,21 +5,11 @@
     mode: '0755'
   with_items:
     - bat
-    - bspwm
-    - dunst
-    - fish
+   # - fish
     - kitty
-    - polybar
     - sway
-    - sxhkd
     - Thunar
     - waybar
-
-- name: Copy redshift config file
-  ansible.builtin.copy:
-    src: "files/redshift/redshift.conf"
-    dest: "~/.config/redshift.conf"
-    mode: '0644'
 
 - name: Copy nano config file
   ansible.builtin.copy:
@@ -32,11 +22,8 @@
     path: "{{ item }}"
     mode: '0744'
   with_items:
-    - ~/.config/bspwm/bspwmrc
-    - ~/.config/bspwm/refresh_spaces.sh
     - ~/.config/sway/scripts/lock-screen.sh
     - ~/.config/sway/scripts/rename_workspace.sh
-    - ~/.config/sxhkd/rofi-system-menu.sh
     - ~/.config/waybar/scripts/get_layout.sh
     - ~/.config/waybar/scripts/get_cpugovernor.sh
     - ~/.config/waybar/scripts/toggle_cpugovernor.sh

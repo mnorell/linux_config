@@ -3,10 +3,10 @@
   ansible.builtin.package:
     name:
       - git
-      - openjdk-8-jdk
+      # - openjdk-8-jdk
       - openjdk-21-jdk
       - maven
-      - virtualbox
+      # - virtualbox
       # - vagrant
       - curl
       - jq

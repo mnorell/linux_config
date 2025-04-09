@@ -1,19 +1,15 @@
 # linux_config
-Nothing fancy, just my "setup a newly installed ubuntu"-scripts.
+Nothing fancy, just my "setup a newly installed fedora"-scripts.
 
-It installs and configures bspwm with Polybar, fonts, themes and my standard setup of programs.
+It installs and configures Sway with Waybar, setup my prefered look-n-feel and my standard setup of programs.
 
 ## prereq.
-Install ubuntu 24.04, make sure you have at least the same size swap as ram to enable hibernation.
+Install Fedora 41, make sure you have at least the same size swap as ram to enable hibernation.
 
-`sudo apt install ansible python3-psutil`
-or
 `sudo dnf install ansible python3-psutil`
 
 ## Run
 `bash run_install.sh`
-
-(sudo echo for "passwordless sudo")
 
 
 ## Manual steps.
@@ -27,43 +23,6 @@ or
 
 
 ## Todo
-
-
-### sway...
-- everything
-
-### Hyprland
-- waybar
-- mouse buttons
-- mouse gestures, back + forward
-- mouse pointers
-- scrolling (Adding touch_scroll_multiplier 10.0 in my ~/.config/kitty/kitty.conf was enough)
-- multimonitor
-- lock screen
-
-
-### Paper WM
-- keyboard
-- nautilus
-- mouse, 3-button for right
-- back in browser
-- keyboard shortcuts
-    - nautilus
-    - vivaldi
-    - terminal
-    - close window?
-    - rofi menus?
-
-
-### BSPWM
 - Auto updates?
-- lock screen on lid close.
 - Run powertop? Or laptop-mode-tools? Set good powersaving settings...
 - fingerprint reader
-
-## Setting up a test vm
-Install ubuntu in virtualbox.
-`sudo apt install build-essential dkms`
-Insert guest additions cd, and install it.
-`sudo adduser $USER vboxsf`
-Add shared folders

@@ -7,9 +7,9 @@
   ansible.builtin.import_tasks:
     file: system-settings.yaml
 
-- name: Font size
-  ansible.builtin.import_tasks:
-    file: font-size.yaml
+# - name: Font size
+#   ansible.builtin.import_tasks:
+#     file: font-size.yaml
 
 - name: Copy config
   ansible.builtin.import_tasks:

@@ -142,7 +142,8 @@
         "format": "{} ",
         "tooltip": false,
         "interval": 1,
-        "exec": "~/.config/waybar/scripts/get_layout.sh"
+        "exec": "~/.config/waybar/scripts/get_layout.sh",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
     },
     "custom/cpugovernor": {
         "format": "{}",

@@ -1,4 +1,3 @@
-# MKDIR .config/xkb/symbols/
 - name: Create config directory if it does not exist
   ansible.builtin.file:
     path: "~/.config/xkb/symbols/"
@@ -9,15 +8,9 @@
   # become: true
   ansible.builtin.copy:
     src: "files/{{ item }}"
-    # dest: "/usr/share/X11/xkb/symbols/{{ item }}"
     dest: "~/.config/xkb/symbols/{{ item }}"
     mode: '0644'
   with_items:
     - gb
     - se
     - us
-
-# - name: Add layouts to gnome options
-#   ansible.builtin.copy:
-#     src: "files/evdev.xml"
-#     dest: ".config/xkb/rules/evdev.xml"
