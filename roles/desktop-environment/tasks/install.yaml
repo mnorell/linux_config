@@ -7,6 +7,7 @@
       - swaylock
       - python3-i3ipc
       - waybar
+      - fontawesome-fonts-all
 
       - rofi # replace with fuzzle ?
       - mako
