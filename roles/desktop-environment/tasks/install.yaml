@@ -34,20 +34,13 @@
       - fastfetch
     state: present
 
-- name: Import Vivaldi APT repo keys
+- name: Add Vivaldi repository
   become: true
-  ansible.builtin.apt_key:
-    url: https://repo.vivaldi.com/archive/linux_signing_key.pub
-  when:
-    - ansible_facts['distribution'] == "Ubuntu"
-
-- name: Add Vivaldi APT repositories
-  become: true
-  ansible.builtin.apt_repository:
-    repo: deb https://repo.vivaldi.com/archive/deb/ stable main
-    filename: vivaldi-stable
-  when:
-    - ansible_facts['distribution'] == "Ubuntu"
+  ansible.builtin.yum_repository:
+    name: vivaldi
+    description: Vivaldi
+    baseurl: https://repo.vivaldi.com/archive/rpm/{{ ansible_architecture }}
+    gpgkey: https://repo.vivaldi.com/archive/linux_signing_key.pub
 
 - name: Install applications
   become: true
@@ -61,7 +54,7 @@
       - gnome-tweaks
       - thunar
       - thunar-archive-plugin
-      # - usb-creator-gtk
+      - mediawriter
       - chromium-browser
       - vivaldi-stable
     state: present

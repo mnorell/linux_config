@@ -1,45 +1,39 @@
+- name: Add VScode repository
+  become: true
+  ansible.builtin.yum_repository:
+    name: vscode
+    description: Visual Studio Code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Add Docker repository
+  become: true
+  ansible.builtin.yum_repository:
+    name: docker-ce
+    description: Docker CE stable
+    baseurl: https://download.docker.com/linux/fedora/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/stable
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+
 - name: Install developer tools, from package manager
   become: true
   ansible.builtin.package:
     name:
       - git
-      # - openjdk-8-jdk
-      - openjdk-21-jdk
+      - java-21-openjdk-devel
+      - java-latest-openjdk-devel
       - maven
-      # - virtualbox
-      # - vagrant
       - curl
       - jq
       - ansible-lint
-    state: present
-
-- name: Install developer tools, from snap
-  become: true
-  community.general.snap:
-    name:
-      - intellij-idea-ultimate
       - code
-      - node
-      - mqtt-explorer
-    classic: true
+      - nodejs
+    state: present
 
 - name: Install developer tools, from npm
   become: true
   community.general.npm:
     name: "@angular/cli"
     global: true
-    state: present
-
-- name: Import docker apt repo keys
-  become: true
-  ansible.builtin.apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
-
-- name: Add docker apt repositories
-  become: true
-  ansible.builtin.apt_repository:
-    repo: deb https://download.docker.com/linux/ubuntu {{ ansible_facts.lsb.codename }} stable
-    filename: docker
 
 - name: Install docker
   become: true
@@ -47,6 +41,7 @@
     name:
       - docker-ce
       - docker-ce-cli
+      - containerd.io
       - docker-buildx-plugin
       - docker-compose-plugin
     state: present

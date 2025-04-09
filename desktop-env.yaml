@@ -1,10 +1,11 @@
 - name: Full install
   hosts: localhost
   connection: local
+  gather_facts: true
   roles:
-    # - role: paperwm
     - role: desktop-environment
     #- role: hardware-support # only x11 stuff...
     - role: dev-tools
     - role: custom-keyboard-layout
     # - role: unattended-upgrades use custom script? Working out of the box?
+    # - role: paperwm
