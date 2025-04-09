@@ -19,9 +19,9 @@ Install Fedora 41, make sure you have at least the same size swap as ram to enab
 - `sudo dpkg-reconfigure console-setup`:
     Set: `UTF-8`, `Combined: Lat. Slav. Greek`, `Terminus`, max size.
 - login to vivaldi
-- login to vscode settings sync.
+- login to vscode settings sync. (github)
 - install intellij
-- login to intellij settings sync, add catppuccin theme and icons, disable unused plugins.
+- login to intellij settings sync (github)
 
 
 ## Todo
