@@ -15,7 +15,7 @@ Install Fedora 41, make sure you have at least the same size swap as ram to enab
 ## Manual steps.
 - deep-sleep-fixes / enable hibernate
 - setup git
-- set `GRUB_GFXMODE=1920x1440` in `/etc/default/grub`, and run `sudo update-grub`
+- set `GRUB_GFXMODE=1920x1440` in `/etc/default/grub`, and run `sudo grub2-mkconfig -o /boot/grub2/grub.cfg`
 - `sudo dpkg-reconfigure console-setup`:
     Set: `UTF-8`, `Combined: Lat. Slav. Greek`, `Terminus`, max size.
 - login to vivaldi
