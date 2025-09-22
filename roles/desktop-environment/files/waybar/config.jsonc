@@ -92,7 +92,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [""]
     },
     "battery": {
         "states": {
@@ -147,7 +147,7 @@
     },
     "custom/cpugovernor": {
         "format": "{}",
-        "interval": 3,
+        "interval": 1,
         "return-type": "json",
         "exec": "sh ~/.config/waybar/scripts/get_cpugovernor.sh",
         "on-click": "sh ~/.config/waybar/scripts/toggle_cpugovernor.sh",
