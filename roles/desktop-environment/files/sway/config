@@ -64,6 +64,9 @@ bindsym {
     #
     # Basics:
     #
+        # Show help
+        $mod+h exec kitty bat --paging always ~/.config/sway/instructions.md
+
         # Kill focused window
         $mod+Shift+q kill
 
