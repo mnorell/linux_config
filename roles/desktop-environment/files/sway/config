@@ -34,7 +34,7 @@
 ### Input configuration
     input type:keyboard {
         xkb_layout gb,se
-        xkb_variant shift-for-numbers,gb
+        xkb_variant with-swedish-chars,gb
         xkb_options grp:alt_shift_toggle
     }
     input type:touchpad {
@@ -119,28 +119,6 @@ bindsym {
         $mod+Shift+8 move container to workspace number 8
         $mod+Shift+9 move container to workspace number 9
         $mod+Shift+0 move container to workspace number 10
-        #
-        #And again, for my weird keymap (gb, shift for numbers).
-        $mod+exclam      workspace number 1
-        $mod+quotedbl    workspace number 2
-        $mod+sterling    workspace number 3
-        $mod+dollar      workspace number 4
-        $mod+percent     workspace number 5
-        $mod+asciicircum workspace number 6
-        $mod+ampersand   workspace number 7
-        $mod+asterisk    workspace number 8
-        $mod+parenleft   workspace number 9
-        $mod+parenright  workspace number 10
-        $mod+Shift+exclam      move container to workspace number 1
-        $mod+Shift+quotedbl    move container to workspace number 2
-        $mod+Shift+sterling    move container to workspace number 3
-        $mod+Shift+dollar      move container to workspace number 4
-        $mod+Shift+percent     move container to workspace number 5
-        $mod+Shift+asciicircum move container to workspace number 6
-        $mod+Shift+ampersand   move container to workspace number 7
-        $mod+Shift+asterisk    move container to workspace number 8
-        $mod+Shift+parenleft   move container to workspace number 9
-        $mod+Shift+parenright  move container to workspace number 10
     #
     # Move workspace to monitor
         $mod+comma move workspace to output left

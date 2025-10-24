@@ -1,6 +1,6 @@
 #!/bin/bash
 
-swaymsg -t get_inputs | grep '"xkb_active_layout_name": "Shift for numbers' >/dev/null
+swaymsg -t get_inputs | grep '"xkb_active_layout_name: alt for swedish' >/dev/null
 if [ $? -eq 0 ]; then
     echo gb
     exit 0
