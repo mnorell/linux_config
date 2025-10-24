@@ -154,7 +154,7 @@ bindsym {
 
     # Application shortcuts
     $mod+Return exec kitty
-    $mod+z exec vivaldi
+    $mod+z exec brave-browser
     $mod+x exec thunar
 }
 #

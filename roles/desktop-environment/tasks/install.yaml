@@ -35,13 +35,21 @@
       - fastfetch
     state: present
 
-- name: Add Vivaldi repository
+# - name: Add Vivaldi repository
+#   become: true
+#   ansible.builtin.yum_repository:
+#     name: vivaldi
+#     description: Vivaldi
+#     baseurl: https://repo.vivaldi.com/archive/rpm/{{ ansible_architecture }}
+#     gpgkey: https://repo.vivaldi.com/archive/linux_signing_key.pub
+
+- name: Add Brave repository
   become: true
   ansible.builtin.yum_repository:
-    name: vivaldi
-    description: Vivaldi
-    baseurl: https://repo.vivaldi.com/archive/rpm/{{ ansible_architecture }}
-    gpgkey: https://repo.vivaldi.com/archive/linux_signing_key.pub
+    name: brave
+    description: Brave
+    baseurl: https://brave-browser-rpm-release.s3.brave.com/$basearch
+    gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 - name: Install applications
   become: true
@@ -57,5 +65,6 @@
       - thunar-archive-plugin
       - mediawriter
       - chromium-browser
-      - vivaldi-stable
+      # - vivaldi-stable
+      - brave-browser
     state: present
