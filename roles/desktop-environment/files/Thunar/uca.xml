@@ -4,11 +4,10 @@
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
 	<unique-id>1636932168793461-1</unique-id>
-	<command>gnome-terminal --working-directory=%f fish</command>
+	<command>kitty --working-directory %f</command>
 	<description>Open terminal here</description>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
 </action>
 </actions>
-
