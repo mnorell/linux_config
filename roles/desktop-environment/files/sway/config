@@ -42,6 +42,7 @@
         xkb_layout us,se
         xkb_variant with-swedish-chars,us
         xkb_options grp:alt_shift_toggle
+        xkb_numlock enabled
     }
     # Gaming keyboard (se)
     input "49396:515:Hengchangtong__HCT_USB_Entry_Keyboard" {
