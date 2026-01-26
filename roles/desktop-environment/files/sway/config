@@ -5,6 +5,7 @@
     include /etc/sway/config-vars.d/*
 #
 ### Look and feel
+    output DP-1 scale 1.2
     output * bg #888888 solid_color
     default_border pixel 4
     default_floating_border normal
@@ -164,7 +165,7 @@ bindsym {
     $mod+Shift+minus gaps outer all minus 5
 
     # Application shortcuts
-    $mod+Return exec kitty
+    $mod+Return exec ptyxis
     $mod+z exec brave-browser
     $mod+x exec thunar
 }
