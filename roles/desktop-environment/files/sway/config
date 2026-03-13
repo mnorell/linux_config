@@ -55,7 +55,7 @@
         drag enabled
         tap_button_map lmr
         click_method clickfinger
-        #clickfinger_button_map lmr # not working? bug https://github.com/swaywm/sway/issues/8495
+        clickfinger_button_map lmr
         natural_scroll enabled
     }
     
@@ -82,11 +82,14 @@ bindsym {
         # Kill focused window
         $mod+Shift+q kill
 
-        # Start your launcher
+        # Start launcher
         $mod+space exec $menu
 
         # Reload the configuration file
         $mod+Shift+c reload
+
+        # Screenshot
+        Print exec grim -g "$(slurp)" - | wl-copy --type image/png
 
         # Lock screen
         $mod+l exec ~/.config/sway/scripts/lock-screen.sh
