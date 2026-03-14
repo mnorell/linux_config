@@ -1,7 +1,8 @@
 
 ### Variables
     set $mod Mod4
-    set $menu rofi -show drun -font "JetBrains Mono NF 16" -width 20 -lines 10 -show-icons
+    #set $menu rofi -show drun -font "JetBrains Mono NF 16" -width 20 -lines 10 -show-icons
+    set $menu fuzzel
     include /etc/sway/config-vars.d/*
 #
 ### Look and feel

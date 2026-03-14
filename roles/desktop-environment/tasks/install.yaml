@@ -9,7 +9,8 @@
       - waybar
       - fontawesome-fonts-all
 
-      - rofi # replace with fuzzle ?
+      - rofi
+      - fuzzel
       - mako
 
       - wlsunset
