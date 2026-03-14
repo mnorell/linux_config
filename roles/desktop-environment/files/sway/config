@@ -166,9 +166,11 @@ bindsym {
     $mod+minus gaps inner all minus 5
     $mod+Shift+equal gaps outer all plus 5
     $mod+Shift+minus gaps outer all minus 5
-
-    # Application shortcuts
-    $mod+Return exec ptyxis --new-window
+#
+# Application shortcuts
+#
+    $mod+Return exec kitty
+    #$mod+Return exec ptyxis --new-window
     $mod+z exec brave-browser
     $mod+x exec thunar
 }
