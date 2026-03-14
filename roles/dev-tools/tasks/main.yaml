@@ -19,7 +19,7 @@
   ansible.builtin.package:
     name:
       - git
-      - java-21-openjdk-devel
+      # - java-25-openjdk-devel
       - java-latest-openjdk-devel
       - maven
       - curl
@@ -53,7 +53,7 @@
     dest: /etc/docker/daemon.json
     mode: '0644'
 
-- name: Add user '{{ ansible_env.USER }}' to group 'docker'
+- name: Add group docker to user {{ ansible_env.USER }}
   become: true
   ansible.builtin.user:
     name: '{{ ansible_env.USER }}'
