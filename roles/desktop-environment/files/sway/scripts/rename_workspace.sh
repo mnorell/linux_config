@@ -12,6 +12,6 @@ old_name=$(echo $name | sed 's/\"\(.*\)\:\(.*\)\"/\2/')
 #     -width 20 \
 #     -filter "$old_name")
 
-new_name=$(fuzzel --dmenu --lines 0 --prompt "Rename workspace:" --search "$old_name")
+new_name=$(fuzzel --dmenu --width 60 --prompt-only "Rename workspace:" --search "$old_name")
 
 swaymsg rename workspace to $num:$new_name
