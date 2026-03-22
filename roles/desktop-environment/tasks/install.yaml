@@ -9,7 +9,7 @@
       - waybar
       - fontawesome-fonts-all
 
-      - rofi
+      #- rofi
       - fuzzel
       - mako
 
