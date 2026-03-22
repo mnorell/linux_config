@@ -8,6 +8,6 @@ bindgesture {
     swipe:3:left  exec wtype -M alt -k right -m alt
 }
 
-# Drag windows by holding down $mod and left mouse button.
-# Resize them with $mod.and right mouse button
-floating_modifier $mod normal
+# Drag windows by holding down $super and left mouse button.
+# Resize them with $super.and right mouse button
+floating_modifier $super normal

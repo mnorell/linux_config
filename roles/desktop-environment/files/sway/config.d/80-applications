@@ -1,13 +1,13 @@
 bindsym {
     # Terminal
-    $mod+Return exec kitty
-    #$mod+Return exec ptyxis --new-window
+    $super+Return exec kitty
+    #$super+Return exec ptyxis --new-window
     
     # Browser
-    $mod+z exec brave-browser
+    $super+z exec brave-browser
 
     # Filemanager
-    $mod+x exec thunar
+    $super+x exec thunar
 
     # Screenshot (to clipboard)
     Print exec grim -g "$(slurp)" - | wl-copy --type image/png
