@@ -37,26 +37,27 @@ bindsym {
     # Workspaces:
     #
         # Switch to workspace
-        $super+1 workspace number 1
-        $super+2 workspace number 2
-        $super+3 workspace number 3
-        $super+4 workspace number 4
-        $super+5 workspace number 5
-        $super+6 workspace number 6
-        $super+7 workspace number 7
-        $super+8 workspace number 8
-        $super+9 workspace number 9
-        $super+0 workspace number 10
-        $super+Shift+1 move container to workspace number 1
-        $super+Shift+2 move container to workspace number 2
-        $super+Shift+3 move container to workspace number 3
-        $super+Shift+4 move container to workspace number 4
-        $super+Shift+5 move container to workspace number 5
-        $super+Shift+6 move container to workspace number 6
-        $super+Shift+7 move container to workspace number 7
-        $super+Shift+8 move container to workspace number 8
-        $super+Shift+9 move container to workspace number 9
-        $super+Shift+0 move container to workspace number 10
+        ##$super+1 workspace number 1
+        $super+1 workspace $ws1
+        $super+2 workspace $ws2
+        $super+3 workspace $ws3
+        $super+4 workspace $ws4
+        $super+5 workspace $ws5
+        $super+6 workspace $ws6
+        $super+7 workspace $ws7
+        $super+8 workspace $ws8
+        $super+9 workspace $ws9
+        $super+0 workspace $ws10
+        $super+Shift+1 move container to workspace $ws1
+        $super+Shift+2 move container to workspace $ws2
+        $super+Shift+3 move container to workspace $ws3
+        $super+Shift+4 move container to workspace $ws4
+        $super+Shift+5 move container to workspace $ws5
+        $super+Shift+6 move container to workspace $ws6
+        $super+Shift+7 move container to workspace $ws7
+        $super+Shift+8 move container to workspace $ws8
+        $super+Shift+9 move container to workspace $ws9
+        $super+Shift+0 move container to workspace $ws10
     #
     # Move workspace to monitor
         $super+comma move workspace to output left
