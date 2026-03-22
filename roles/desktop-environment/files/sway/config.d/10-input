@@ -1,0 +1,29 @@
+
+input type:keyboard {
+    xkb_layout gb,se
+    xkb_variant with-swedish-chars,gb
+    xkb_options grp:alt_shift_toggle
+}
+
+# Cherry keyboard (us)
+input "1130:17:HID_046a:0011" {
+    xkb_layout us,se
+    xkb_variant with-swedish-chars,us
+    xkb_options grp:alt_shift_toggle
+    xkb_numlock enabled
+}
+
+# Gaming keyboard (se)
+input "49396:515:Hengchangtong__HCT_USB_Entry_Keyboard" {
+    xkb_layout se
+}
+
+input type:touchpad {
+    dwt enabled #disable while typing
+    tap enabled
+    drag enabled
+    tap_button_map lmr
+    click_method clickfinger
+    clickfinger_button_map lmr
+    natural_scroll enabled
+}

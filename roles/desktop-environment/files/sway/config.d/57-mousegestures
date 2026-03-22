@@ -1,0 +1,13 @@
+bindgesture {
+    # Allow switching between workspaces with left and right swipes (three fingers)
+    swipe:4:right workspace prev
+    swipe:4:left  workspace next
+
+    # Send alt + direction arrows, for back forward in some apps, like browsers and thunar.
+    swipe:3:right exec wtype -M alt -k left -m alt
+    swipe:3:left  exec wtype -M alt -k right -m alt
+}
+
+# Drag windows by holding down $mod and left mouse button.
+# Resize them with $mod.and right mouse button
+floating_modifier $mod normal
