@@ -123,7 +123,8 @@
         "scroll-step": 1,
         "format": "{volume}% ",
         "format-muted": "",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-middle": "pavucontrol"
     },
     "custom/power": {
         "format" : " ⏻ ",

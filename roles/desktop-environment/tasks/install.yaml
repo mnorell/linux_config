@@ -18,6 +18,7 @@
       - grim
       - ffmpeg-free
       - brightnessctl
+      - pavucontrol
 
       - jetbrains-mono-fonts
 
