@@ -26,17 +26,46 @@
         "custom/power"
     ],
      "sway/workspaces": {
-         "disable-scroll": false,
-         "all-outputs": false,
-         "warp-on-scroll": false,
-         "format": "{index}.{name}"
-         
+        "disable-scroll": false,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "format": "{index}. {windows} {name}",
+        "window-format": "<span color='#e0e0e0'>{name}</span>", // icons wont show without this undocumented config
+        "format-window-separator": " ",
+        "window-rewrite-default": "", // 
+        "window-rewrite": {
+            
+            // Web
+            "class<firefox>": "",
+            "class<google-chrome>": "",
+            "class<brave-browser>": "",
+            "class<vivaldi-stable>": "",
+            "class<Chromium>": "",
+
+            "title<.*GitHub.*>": "",
+            "title<.*Gmail.*>": "", //   
+
+            // Terminals
+            "class<kitty>": "",
+            "class<foot>": "",
+            "class<gnome-terminal>": "",
+            "class<.*Ptyxis>": "",
+
+            // Code
+            "class<code>": "",
+            "class<jetbrains-idea>": "",
+
+            // System
+            "class<.*Nautilus>": "",
+            "class<thunar>": ""
+        }
      },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/window": {
-        "on-click-middle": "swaymsg kill"
+        "on-click-middle": "swaymsg kill",
+        "icon": true
     },
     "idle_inhibitor": {
         "format": "{icon}",
