@@ -64,6 +64,7 @@
       - gnome-tweaks
       - thunar
       - thunar-archive-plugin
+      - file-roller
       - mediawriter
       - chromium
       # - vivaldi-stable
