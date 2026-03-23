@@ -23,7 +23,6 @@
       - jetbrains-mono-fonts
 
       - kitty
-      - fastfetch
     state: present
 
 - name: Install cli tools
