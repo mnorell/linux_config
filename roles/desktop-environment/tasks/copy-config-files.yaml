@@ -25,6 +25,7 @@
   with_items:
     - ~/.config/sway/scripts/lock-screen.sh
     - ~/.config/sway/scripts/rename_workspace.sh
+    - ~/.config/sway/scripts/screen-mirroring.sh
     - ~/.config/waybar/scripts/get_layout.sh
     - ~/.config/waybar/scripts/get_cpugovernor.sh
     - ~/.config/waybar/scripts/toggle_cpugovernor.sh

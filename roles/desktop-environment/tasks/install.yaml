@@ -8,6 +8,7 @@
       - python3-i3ipc
       - waybar
       - fontawesome-fonts-all
+      - wl-mirror
 
       - fuzzel
       - mako

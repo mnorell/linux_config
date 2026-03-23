@@ -19,6 +19,9 @@ bindsym {
 
         # Exit sway (logout of your Wayland session)
         $super+Shift+e exec swaynag -t warning -m 'Really logout?' -B 'Yes, logout' 'swaymsg exit'
+
+        # Toggle screen mirroring
+        $super+p exec ~/.config/sway/scripts/screen-mirroring.sh
     #
     # Moving around:
     #
