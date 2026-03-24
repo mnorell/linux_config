@@ -18,3 +18,7 @@ default-timeout=10000
 background-color=#ffbbbb
 border-color=#e97070
 default-timeout=0
+
+[urgency="low"]
+background-color=#caffc6
+border-color=#4fad20
