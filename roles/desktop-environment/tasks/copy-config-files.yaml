@@ -5,9 +5,9 @@
     mode: '0755'
   with_items:
     - bat
-   # - fish
     - fuzzel
     - kitty
+    - mako
     - sway
     - Thunar
     - waybar
