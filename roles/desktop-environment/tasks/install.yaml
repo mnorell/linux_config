@@ -5,6 +5,7 @@
       - sway
       - swayidle
       - swaylock
+      - mate-polkit
       - python3-i3ipc
       - waybar
       - fontawesome-fonts-all

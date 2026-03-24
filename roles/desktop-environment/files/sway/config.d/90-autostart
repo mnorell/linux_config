@@ -12,11 +12,9 @@ bar {
 
 # Autostart
 exec {
-    nm-applet
+    #nm-applet
     wlsunset -t "5000" -T "6500" -d "900" -S "07:00" -s "20:00"
-
-    # mako running too.
-    killall dunst
+    /usr/libexec/polkit-mate-authentication-agent-1
 }
 # These run on reload too
 # exec_always {
