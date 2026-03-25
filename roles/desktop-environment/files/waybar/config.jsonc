@@ -32,28 +32,32 @@
         "format": "{index}. {windows} {name}",
         "window-format": "<span color='#e0e0e0'>{name}</span>", // icons wont show without this undocumented config
         "format-window-separator": " ",
-        "window-rewrite-default": "", // 
+        "window-rewrite-default": "", // 
         "window-rewrite": {
             
             // Web
-            "class<firefox>": "",
+            "class<firefox>": "", // ``, ``, ``, ``, ``, ``
             "class<google-chrome>": "",
             "class<brave-browser>": "",
             "class<vivaldi-stable>": "",
             "class<Chromium>": "",
 
-            "title<.*GitHub.*>": "",
+            // Webpages
+            // "class<firefox> title<.*github.*>": ""
+            "title<.*GitHub.*>": "", // 
             "title<.*Gmail.*>": "", //   
 
             // Terminals
-            "class<kitty>": "",
+            "class<kitty>": "", // ``, ``, ``, ``
             "class<foot>": "",
             "class<gnome-terminal>": "",
             "class<.*Ptyxis>": "",
 
-            // Code
-            "class<code>": "",
-            "class<jetbrains-idea>": "",
+            // Code / editors
+            "class<jetbrains-idea>": "",
+            "class<code>": "", // ``, ``, ``
+            "class<gedit>": "",
+            "class<.*TextEditor>": "",
 
             // System
             "class<.*Nautilus>": "",
