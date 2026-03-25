@@ -22,8 +22,8 @@ super + (left click)        : Move window
 super + number              : Switch workspace
 super + shift + number      : Move window to workspace
 
-super + ,                   : Move workspace to left screen 
-super + .                   : Move workspace to right screen
+super + ,                   : Move workspace to left/right screen 
+super + .                   : Move workspace to up/down screen
 
 super + a                   : Move focus to parent
 

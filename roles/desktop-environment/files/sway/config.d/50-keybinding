@@ -63,8 +63,8 @@ bindsym {
         $super+Shift+0 move container to workspace $ws10
     #
     # Move workspace to monitor
-        $super+comma move workspace to output left
-        $super+period move workspace to output right
+        $super+comma move workspace to output right
+        $super+period move workspace to output down
     #
     # Rename workspace
         $super+n exec bash ~/.config/sway/scripts/rename_workspace.sh
