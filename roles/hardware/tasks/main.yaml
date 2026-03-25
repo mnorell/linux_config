@@ -1,0 +1,21 @@
+
+- name: Install mouse tool, logiops
+  become: true
+  ansible.builtin.package:
+    name: logiops
+    state: present
+
+- name: Configure logiops
+  become: true
+  ansible.builtin.copy:
+    src: files/logid.cfg
+    dest: /etc/logid.cfg
+    mode: '0544'
+
+- name: Start and enable logiops service, logid
+  become: true
+  ansible.builtin.service:
+    name: logid
+    state: started
+    enabled: true
+    

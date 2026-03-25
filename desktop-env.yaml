@@ -6,3 +6,4 @@
     - role: desktop-environment
     - role: dev-tools
     - role: custom-keyboard-layout
+    - role: hardware
