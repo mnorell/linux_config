@@ -44,7 +44,7 @@
 
             // Webpages
             // "class<firefox> title<.*github.*>": ""
-            "title<.*GitHub.*>": "", // 
+            "class<brave-browser> title<.*GitHub.*>": "", // 
             "title<.*Gmail.*>": "", //   
 
             // Terminals
