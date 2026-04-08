@@ -28,6 +28,9 @@ super + .                   : Move workspace to up/down screen
 super + a                   : Move focus to parent
 
 ## Layout control
+super + p                   : Toggle presentation mode (screen mirroring)
+super + shift + p           : Toggle big cursor
+
 super + f                   : Toggle fullscreen
 super + n                   : Rename workspace
 

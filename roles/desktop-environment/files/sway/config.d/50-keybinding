@@ -20,8 +20,9 @@ bindsym {
         # Exit sway (logout of your Wayland session)
         $super+Shift+e exec swaynag -t warning -m 'Really logout?' -B 'Yes, logout' 'swaymsg exit'
 
-        # Toggle screen mirroring
+        # Toggle presentation mode, screen mirroring
         $super+p exec ~/.config/sway/scripts/screen-mirroring.sh
+        $super+Shift+p exec ~/.config/sway/scripts/toggle-cursor.sh
     #
     # Moving around:
     #
@@ -67,7 +68,7 @@ bindsym {
         $super+period move workspace to output down
     #
     # Rename workspace
-        $super+n exec bash ~/.config/sway/scripts/rename_workspace.sh
+        $super+n exec bash ~/.config/sway/scripts/rename-workspace.sh
 #
 # Layout stuff:
 #
