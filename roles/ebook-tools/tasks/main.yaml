@@ -1,0 +1,86 @@
+- name: Install Calibre and crypto dependencies via DNF
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - calibre
+      - unzip
+      - python3-cryptography
+      - python3-pycryptodomex
+      - python3-oscrypto
+    state: present
+
+- name: Create temporary working directory
+  ansible.builtin.file:
+    path: "/tmp/calibre_plugins_setup"
+    state: directory
+    mode: "0755"
+
+- name: Fetch latest DeACSM release metadata from GitHub
+  ansible.builtin.uri:
+    url: https://api.github.com/repos/Leseratte10/acsm-calibre-plugin/releases/latest
+    return_content: true
+  register: deacsm_release
+
+- name: Download DeACSM plugin archive
+  ansible.builtin.get_url:
+    url: "{{ (deacsm_release.json.assets | selectattr('name', 'search', '^DeACSM.*\\.zip$') | first).browser_download_url }}"
+    dest: "/tmp/calibre_plugins_setup/DeACSM.zip"
+    mode: "0644"
+
+- name: Fetch latest DeDRM release metadata from GitHub
+  ansible.builtin.uri:
+    url: https://api.github.com/repos/noDRM/DeDRM_tools/releases/latest
+    return_content: true
+  register: dedrm_release
+
+- name: Download DeDRM_tools archive
+  ansible.builtin.get_url:
+    url: "{{ (dedrm_release.json.assets | selectattr('name', 'search', '^DeDRM_tools.*\\.zip$') | first).browser_download_url }}"
+    dest: "/tmp/calibre_plugins_setup/DeDRM_tools.zip"
+    mode: "0644"
+
+- name: Extract DeDRM_tools to access the inner DeDRM_plugin.zip
+  ansible.builtin.unarchive:
+    src: "/tmp/calibre_plugins_setup/DeDRM_tools.zip"
+    dest: "/tmp/calibre_plugins_setup"
+    remote_src: true
+
+- name: Ensure Calibre plugins configuration directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.config/calibre/plugins"
+    state: directory
+    mode: "0755"
+
+- name: (FIX for old crypto libs) Create symlink from Crypto to Cryptodome in Python site-packages
+  become: true
+  ansible.builtin.file:
+    src: /usr/lib64/python3.14/site-packages/Cryptodome
+    dest: /usr/lib64/python3.14/site-packages/Crypto
+    state: link
+
+- name: Install DeACSM plugin into Calibre via CLI
+  ansible.builtin.command:
+    cmd: "calibre-customize -a /tmp/calibre_plugins_setup/DeACSM.zip"
+  register: install_deacsm
+  changed_when: "'Plugin added' in install_deacsm.stdout or 'Plugin updated' in install_deacsm.stdout"
+
+# - name: (remove FIX) Remove symlink from Crypto to Cryptodome in Python site-packages
+#   become: true
+#   ansible.builtin.file:
+#     path: /usr/lib64/python3.14/site-packages/Crypto
+#     state: absent
+
+- name: Install DeDRM plugin into Calibre via CLI
+  ansible.builtin.command:
+    cmd: "calibre-customize -a /tmp/calibre_plugins_setup/DeDRM_plugin.zip"
+  register: install_dedrm
+  changed_when: "'Plugin added' in install_dedrm.stdout or 'Plugin updated' in install_dedrm.stdout"
+
+- name: Clean up temporary installation files
+  ansible.builtin.file:
+    path: "/tmp/calibre_plugins_setup"
+    state: absent
+
+# MANUAL step:
+# Preferences -> Plugins -> File type plugins, select DeACSM, and click Customize
+# plugin. Click Link to ADE account and log in with your Adobe ID / Bytebooks ID

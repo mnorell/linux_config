@@ -7,3 +7,4 @@
     - role: dev-tools
     - role: custom-keyboard-layout
     - role: hardware
+    - role: ebook-tools
